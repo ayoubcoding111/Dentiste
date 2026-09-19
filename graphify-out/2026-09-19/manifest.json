@@ -1,0 +1,80 @@
+{
+  "PRD.md": {
+    "mtime": 1789845058.5154803,
+    "seen": 1789845276.7298007,
+    "ast_hash": "7db33100b757dd7894ff0763da245a73",
+    "semantic_hash": ""
+  },
+  "TASKS.md": {
+    "mtime": 1789835298.738103,
+    "seen": 1789845276.729808,
+    "ast_hash": "1b2622405479e36a3ee557cfbc620004",
+    "semantic_hash": ""
+  },
+  "TRD.md": {
+    "mtime": 1789834881.6786494,
+    "seen": 1789845276.7298112,
+    "ast_hash": "99a3143750953bc724849523fa2222f8",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1789845269.6340203,
+    "seen": 1789845276.729813,
+    "ast_hash": "93441624240fd4537c04b625093a1421",
+    "semantic_hash": ""
+  },
+  "imgs/Couronne sur Implant.png": {
+    "mtime": 1789840042.3080885,
+    "seen": 1789845276.7298148,
+    "ast_hash": "19e59da3eda850b847ce0e6145ad3048",
+    "semantic_hash": ""
+  },
+  "imgs/Firefly (3).png": {
+    "mtime": 1789839692.541148,
+    "seen": 1789845276.7298164,
+    "ast_hash": "afb19e7cf242993f16feb944220a8639",
+    "semantic_hash": ""
+  },
+  "imgs/Firefly_RemoveBackground.png": {
+    "mtime": 1789839346.281761,
+    "seen": 1789845276.729818,
+    "ast_hash": "9433e7f0743cd8adfa62424bdb12c31e",
+    "semantic_hash": ""
+  },
+  "imgs/Invisalign.png": {
+    "mtime": 1789840082.6242042,
+    "seen": 1789845276.7298193,
+    "ast_hash": "e833a6d1e7182829e3bfe500ad6949dd",
+    "semantic_hash": ""
+  },
+  "imgs/L'Implantation Dentaire.png": {
+    "mtime": 1789839632.4103808,
+    "seen": 1789845276.7298207,
+    "ast_hash": "37fbe4ac8cef17f8a535f8a0ff9fee50",
+    "semantic_hash": ""
+  },
+  "imgs/facettes.png": {
+    "mtime": 1789839844.9403944,
+    "seen": 1789845276.7298222,
+    "ast_hash": "dff926ec21070689d6756984d45176f5",
+    "semantic_hash": ""
+  },
+  "imgs/main.png": {
+    "mtime": 1789839410.281668,
+    "seen": 1789845276.7298238,
+    "ast_hash": "0485a1e86878555f1073d43e908c6d98",
+    "semantic_hash": ""
+  },
+  "imgs/pexels-karola-g-6627599-removebg-preview.png": {
+    "mtime": 1789839852.8588722,
+    "seen": 1789845276.7298255,
+    "ast_hash": "d685eadd5f4f6724a361ba48b4e3b77b",
+    "semantic_hash": ""
+  },
+  "imgs/transparent.png": {
+    "mtime": 1789840124.8988307,
+    "seen": 1789845276.729827,
+    "ast_hash": "674712d4e2477d6815445fb12865ac02",
+    "semantic_hash": ""
+  }
+}

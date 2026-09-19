@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Pacific Dental Clinic Dr Bedjaoui | Dentiste à Saïd Hamdine, Alger
+    </title>
+    <meta
+      name="description"
+      content="Pacific Dental Clinic Dr Bedjaoui à Saïd Hamdine, Alger. Soins dentaires modernes, doux et professionnels. Facettes, Invisalign, implants. Prenez rendez-vous en ligne."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Task 2.1: Header / Navigation Bar -->
+    <header class="site-header" id="top">
+      <nav class="nav container" aria-label="Navigation principale">
+        <a
+          href="#accueil"
+          class="nav-logo"
+          aria-label="Pacific Dental Clinic — Accueil"
+        >
+          <img
+            src="imgs/logo.png"
+            alt="Pacific Dental Clinic logo"
+            class="nav-logo-img"
+            width="38"
+            height="32"
+          />
+          <span class="nav-logo-text"
+            >Pacific Dental <strong>Dr Bedjaoui</strong></span
+          >
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li>
+            <a href="#accueil" data-fr="Accueil" data-ar="الرئيسية">Accueil</a>
+          </li>
+          <li>
+            <a href="#traitements" data-fr="Nos traitements" data-ar="علاجاتنا"
+              >Nos traitements</a
+            >
+          </li>
+          <li>
+            <a href="#temoignages" data-fr="Témoignages" data-ar="آراء المرضى"
+              >Témoignages</a
+            >
+          </li>
+          <li>
+            <a href="#contact" data-fr="Contact" data-ar="اتصل بنا">Contact</a>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <button
+            type="button"
+            class="lang-switch"
+            id="langSwitch"
+            aria-label="Changer de langue"
+          >
+            FR
+          </button>
+          <a
+            href="#rdv"
+            class="btn btn-primary"
+            data-fr="Prendre RDV"
+            data-ar="احجز موعد"
+            >Prendre RDV</a
+          >
+          <button
+            type="button"
+            class="nav-toggle"
+            id="navToggle"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="navLinks"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="accueil">
+      <!-- Task 3.1: Hero Section -->
+      <section class="hero">
+        <div class="hero-text">
+          <h1
+            data-fr="Votre <span class='hl'>sourire</span>, entre les mains d'experts"
+            data-ar="ابتسامتك بين أيدي الخبراء"
+          >
+            Votre <span class="hl">sourire</span>, entre les mains
+            d'experts
+          </h1>
+          <p
+            class="hero-sub"
+            data-fr="Votre sourire, notre solution"
+            data-ar="ابتسامتك، حلّنا"
+          >
+            Votre sourire, notre solution
+          </p>
+          <p
+            class="hero-intro"
+            data-fr="À Saïd Hamdine, Pacific Dental Clinic combine équipements modernes, hygiène irréprochable et soins doux et sans douleur pour toute la famille. Réservez votre rendez-vous en quelques clics."
+            data-ar="في سعيد حمدين، تجمع عيادة Pacific Dental بين المعدات الحديثة والنظافة المثالية ورعاية لطيفة بدون ألم لجميع أفراد العائلة. احجز موعدك ببضع نقرات."
+          >
+            À Saïd Hamdine, Pacific Dental Clinic combine équipements modernes,
+            hygiène irréprochable et soins doux et sans douleur pour toute la
+            famille. Réservez votre rendez-vous en quelques clics.
+          </p>
+          <div class="hero-cta hero-cta--desktop">
+            <a
+              href="#rdv"
+              class="btn btn-primary btn-hero"
+              data-fr="Prendre RDV"
+              data-ar="احجز موعد"
+              >Prendre RDV</a
+            >
+            <a
+              href="#traitements"
+              class="btn btn-secondary btn-hero"
+              data-fr="Nos traitements"
+              data-ar="علاجاتنا"
+              >Nos traitements</a
+            >
+          </div>
+        </div>
+        <div class="hero-media">
+          <img
+            src="imgs/main2.jpg"
+            alt="Patient au sourire éclatant après un soin à Pacific Dental Clinic"
+            class="hero-img"
+            fetchpriority="high"
+          />
+          <div class="hero-cta hero-cta--overlay">
+            <a href="#rdv" class="btn btn-primary btn-hero">Prendre RDV</a>
+            <a href="#traitements" class="btn btn-secondary btn-hero"
+              >Nos traitements</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Task 3.2: Trust Bar — flush right under the hero image -->
+      <div class="trust-marquee">
+        <div class="trust-track" id="trustTrack">
+          <div class="trust-item">
+            <span class="trust-badge trust-badge--google" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18">
+                <path
+                  fill="#4285F4"
+                  d="M23.5 12.3c0-.9-.1-1.5-.3-2.3H12v4.5h6.5c-.1 1.1-.8 2.7-2.4 3.8l-.1.1 3.5 2.7.2.1c2.2-2 3.8-5 3.8-8.9z"
+                />
+                <path
+                  fill="#34A853"
+                  d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.8-2.9c-1 .7-2.4 1.2-4.1 1.2-3.1 0-5.8-2.1-6.8-5l-.1.1-3.6 2.8v.1C3.5 21.3 7.5 24 12 24z"
+                />
+                <path
+                  fill="#FBBC05"
+                  d="M5.2 14.4c-.2-.7-.4-1.5-.4-2.4s.1-1.7.4-2.4l-.1-.1-3.6-2.8-.1.1C.5 8.6 0 10.2 0 12s.5 3.4 1.4 4.9l3.8-2.5z"
+                />
+                <path
+                  fill="#EA4335"
+                  d="M12 4.7c1.8 0 3 .8 3.7 1.4l3.3-3.2C17.9 1.1 15.2 0 12 0 7.5 0 3.5 2.7 1.4 6.7l3.8 2.9c1-2.8 3.6-4.9 6.8-4.9z"
+                />
+              </svg>
+              <span class="stars" aria-hidden="true">★★★★★</span>
+            </span>
+            <span>Sur Google · 40+ avis</span>
+          </div>
+          <div class="trust-item">
+            <span>+10 ans d'expérience</span>
+          </div>
+          <div class="trust-item">
+            <span>Paiement par facilité</span>
+          </div>
+          <div class="trust-item">
+            <span>N°1 dentiste à Saïd Hamdine</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 3.2: About -->
+      <section class="trust" aria-label="Indicateurs de confiance">
+        <div class="container about">
+          <p class="section-kicker">À propos</p>
+          <h2 class="section-title">Une clinique douce, moderne et humaine</h2>
+          <p class="about-text">
+            Notre mission est simple : soigner sans douleur, expliquer avec
+            transparence et accueillir chaque patient comme un membre de la
+            famille. Équipements modernes, hygiène irréprochable et écoute
+            attentive — pour un sourire sain et durable.
+          </p>
+        </div>
+      </section>
+
+      <!-- Task 4.1: Treatments -->
+      <section class="section" id="traitements">
+        <div class="container section-head">
+          <div>
+            <p class="section-kicker">Nos traitements</p>
+            <h2 class="section-title">Des soins adaptés à chaque sourire</h2>
+            <p class="section-desc">
+              Faites défiler pour découvrir nos soins phares. Cliquez sur la
+              flèche pour réserver.
+            </p>
+          </div>
+          <div class="treat-nav">
+            <button
+              type="button"
+              class="treat-arrow"
+              id="treatPrev"
+              aria-label="Voir les traitements précédents"
+            >
+              ←
+            </button>
+            <button
+              type="button"
+              class="treat-arrow"
+              id="treatNext"
+              aria-label="Voir les traitements suivants"
+            >
+              →
+            </button>
+          </div>
+        </div>
+        <div class="container">
+          <div
+            class="treatments-scroll"
+            id="treatScroll"
+            tabindex="0"
+            aria-label="Liste des traitements, faites défiler horizontalement"
+          >
+            <article class="treat-card">
+              <div class="treat-imgwrap">
+                <img
+                  src="imgs/facettes.jpg"
+                  alt="Facette dentaire"
+                  loading="lazy"
+                />
+              </div>
+              <div class="treat-body">
+                <h3>Facette Dentaire</h3>
+                <p>
+                  Corrigez couleur, forme et alignement pour un sourire éclatant
+                  et naturel.
+                </p>
+                <a
+                  href="#rdv"
+                  class="treat-btn"
+                  aria-label="Réserver pour Facette Dentaire"
+                  >→</a
+                >
+              </div>
+            </article>
+            <article class="treat-card">
+              <div class="treat-imgwrap">
+                <img
+                  src="imgs/Invisalign.jpg"
+                  alt="Traitement Invisalign"
+                  loading="lazy"
+                />
+              </div>
+              <div class="treat-body">
+                <h3>Invisalign</h3>
+                <p>
+                  Aligneurs invisibles pour redresser vos dents en toute
+                  discrétion.
+                </p>
+                <a
+                  href="#rdv"
+                  class="treat-btn"
+                  aria-label="Réserver pour Invisalign"
+                  >→</a
+                >
+              </div>
+            </article>
+            <article class="treat-card">
+              <div class="treat-imgwrap">
+                <img
+                  src="imgs/Couronne%20sur%20Implant.jpg"
+                  alt="Couronne sur implant"
+                  loading="lazy"
+                />
+              </div>
+              <div class="treat-body">
+                <h3>Couronne sur Implant</h3>
+                <p>
+                  Restaurez une dent abîmée avec une couronne solide et
+                  esthétique.
+                </p>
+                <a
+                  href="#rdv"
+                  class="treat-btn"
+                  aria-label="Réserver pour Couronne sur Implant"
+                  >→</a
+                >
+              </div>
+            </article>
+            <article class="treat-card">
+              <div class="treat-imgwrap">
+                <img
+                  src="imgs/L'Implantation%20Dentaire.jpg"
+                  alt="Implantation dentaire"
+                  loading="lazy"
+                />
+              </div>
+              <div class="treat-body">
+                <h3>L'Implantation Dentaire</h3>
+                <p>
+                  Remplacez durablement les dents manquantes par des implants
+                  stables.
+                </p>
+                <a
+                  href="#rdv"
+                  class="treat-btn"
+                  aria-label="Réserver pour Implantation Dentaire"
+                  >→</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Task 4.2: Real Results -->
+      <section class="section section-alt" id="resultats">
+        <div class="container">
+          <p class="section-kicker">Résultats réels</p>
+          <h2 class="section-title">Avant / Après : des résultats visibles</h2>
+          <p class="section-desc">
+            Faites glisser le curseur au centre pour comparer. Photos à
+            remplacer par les cas cliniques réels.
+          </p>
+          <div class="ba-grid">
+            <div class="ba-slider" data-ba>
+              <img
+                src="imgs/main2.jpg"
+                alt="Résultat après traitement - cas 1"
+                class="ba-img ba-after"
+                loading="lazy"
+              />
+              <div class="ba-before" data-ba-before>
+                <img
+                  src="imgs/main2.jpg"
+                  alt="État avant traitement - cas 1"
+                  class="ba-img ba-before-img"
+                  loading="lazy"
+                />
+              </div>
+              <span class="ba-label ba-label--before">Avant</span>
+              <span class="ba-label ba-label--after">Après</span>
+              <div class="ba-handle" data-ba-handle>
+                <span class="ba-knob">⇔</span>
+              </div>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                class="ba-range"
+                data-ba-range
+                aria-label="Curseur de comparaison avant après, cas 1"
+              />
+            </div>
+            <div class="ba-slider" data-ba>
+              <img
+                src="imgs/facettes.jpg"
+                alt="Résultat après traitement - cas 2"
+                class="ba-img ba-after"
+                loading="lazy"
+              />
+              <div class="ba-before" data-ba-before>
+                <img
+                  src="imgs/facettes.jpg"
+                  alt="État avant traitement - cas 2"
+                  class="ba-img ba-before-img"
+                  loading="lazy"
+                />
+              </div>
+              <span class="ba-label ba-label--before">Avant</span>
+              <span class="ba-label ba-label--after">Après</span>
+              <div class="ba-handle" data-ba-handle>
+                <span class="ba-knob">⇔</span>
+              </div>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                class="ba-range"
+                data-ba-range
+                aria-label="Curseur de comparaison avant après, cas 2"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Task 5.1: Testimonials -->
+      <section class="section" id="temoignages">
+        <div class="container">
+          <p class="section-kicker">Témoignages</p>
+          <h2 class="section-title">Ce que disent nos patients</h2>
+          <p class="section-desc">Note 5/5 basée sur plus de 40 avis Google.</p>
+          <div class="reviews-grid">
+            <article class="review-card">
+              <p class="review-text">
+                « Accueil très chaleureux et soins totalement sans douleur. Le
+                Dr Bedjaoui explique tout avec patience. Je recommande les yeux
+                fermés. »
+              </p>
+              <div class="review-foot">
+                <span class="review-g" aria-hidden="true"
+                  ><svg viewBox="0 0 24 24" width="20" height="20">
+                    <path
+                      fill="#4285F4"
+                      d="M23.5 12.3c0-.9-.1-1.5-.3-2.3H12v4.5h6.5c-.1 1.1-.8 2.7-2.4 3.8l-.1.1 3.5 2.7.2.1c2.2-2 3.8-5 3.8-8.9z"
+                    />
+                    <path
+                      fill="#34A853"
+                      d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.8-2.9c-1 .7-2.4 1.2-4.1 1.2-3.1 0-5.8-2.1-6.8-5l-.1.1-3.6 2.8v.1C3.5 21.3 7.5 24 12 24z"
+                    />
+                    <path
+                      fill="#FBBC05"
+                      d="M5.2 14.4c-.2-.7-.4-1.5-.4-2.4s.1-1.7.4-2.4l-.1-.1-3.6-2.8-.1.1C.5 8.6 0 10.2 0 12s.5 3.4 1.4 4.9l3.8-2.5z"
+                    />
+                    <path
+                      fill="#EA4335"
+                      d="M12 4.7c1.8 0 3 .8 3.7 1.4l3.3-3.2C17.9 1.1 15.2 0 12 0 7.5 0 3.5 2.7 1.4 6.7l3.8 2.9c1-2.8 3.6-4.9 6.8-4.9z"
+                    /></svg
+                ></span>
+                <div>
+                  <div class="stars">★★★★★</div>
+                  <div class="review-name">Amine K.</div>
+                </div>
+              </div>
+            </article>
+            <article class="review-card">
+              <p class="review-text">
+                « Matériel moderne et hygiène impeccable. Ma facette est
+                parfaite, résultat très naturel. Merci à toute l'équipe ! »
+              </p>
+              <div class="review-foot">
+                <span class="review-g" aria-hidden="true"
+                  ><svg viewBox="0 0 24 24" width="20" height="20">
+                    <path
+                      fill="#4285F4"
+                      d="M23.5 12.3c0-.9-.1-1.5-.3-2.3H12v4.5h6.5c-.1 1.1-.8 2.7-2.4 3.8l-.1.1 3.5 2.7.2.1c2.2-2 3.8-5 3.8-8.9z"
+                    />
+                    <path
+                      fill="#34A853"
+                      d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.8-2.9c-1 .7-2.4 1.2-4.1 1.2-3.1 0-5.8-2.1-6.8-5l-.1.1-3.6 2.8v.1C3.5 21.3 7.5 24 12 24z"
+                    />
+                    <path
+                      fill="#FBBC05"
+                      d="M5.2 14.4c-.2-.7-.4-1.5-.4-2.4s.1-1.7.4-2.4l-.1-.1-3.6-2.8-.1.1C.5 8.6 0 10.2 0 12s.5 3.4 1.4 4.9l3.8-2.5z"
+                    />
+                    <path
+                      fill="#EA4335"
+                      d="M12 4.7c1.8 0 3 .8 3.7 1.4l3.3-3.2C17.9 1.1 15.2 0 12 0 7.5 0 3.5 2.7 1.4 6.7l3.8 2.9c1-2.8 3.6-4.9 6.8-4.9z"
+                    /></svg
+                ></span>
+                <div>
+                  <div class="stars">★★★★★</div>
+                  <div class="review-name">Sara B.</div>
+                </div>
+              </div>
+            </article>
+            <article class="review-card">
+              <p class="review-text">
+                « J'avais peur du dentiste depuis des années. Ici, tout est doux
+                et rassurant. Mon implant s'est fait sans aucune douleur. »
+              </p>
+              <div class="review-foot">
+                <span class="review-g" aria-hidden="true"
+                  ><svg viewBox="0 0 24 24" width="20" height="20">
+                    <path
+                      fill="#4285F4"
+                      d="M23.5 12.3c0-.9-.1-1.5-.3-2.3H12v4.5h6.5c-.1 1.1-.8 2.7-2.4 3.8l-.1.1 3.5 2.7.2.1c2.2-2 3.8-5 3.8-8.9z"
+                    />
+                    <path
+                      fill="#34A853"
+                      d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.8-2.9c-1 .7-2.4 1.2-4.1 1.2-3.1 0-5.8-2.1-6.8-5l-.1.1-3.6 2.8v.1C3.5 21.3 7.5 24 12 24z"
+                    />
+                    <path
+                      fill="#FBBC05"
+                      d="M5.2 14.4c-.2-.7-.4-1.5-.4-2.4s.1-1.7.4-2.4l-.1-.1-3.6-2.8-.1.1C.5 8.6 0 10.2 0 12s.5 3.4 1.4 4.9l3.8-2.5z"
+                    />
+                    <path
+                      fill="#EA4335"
+                      d="M12 4.7c1.8 0 3 .8 3.7 1.4l3.3-3.2C17.9 1.1 15.2 0 12 0 7.5 0 3.5 2.7 1.4 6.7l3.8 2.9c1-2.8 3.6-4.9 6.8-4.9z"
+                    /></svg
+                ></span>
+                <div>
+                  <div class="stars">★★★★★</div>
+                  <div class="review-name">Yasmine M.</div>
+                </div>
+              </div>
+            </article>
+            <article class="review-card">
+              <p class="review-text">
+                « Prise de rendez-vous rapide et ponctualité respectée.
+                Détartrage efficace et conseils clairs pour l'entretien. »
+              </p>
+              <div class="review-foot">
+                <span class="review-g" aria-hidden="true"
+                  ><svg viewBox="0 0 24 24" width="20" height="20">
+                    <path
+                      fill="#4285F4"
+                      d="M23.5 12.3c0-.9-.1-1.5-.3-2.3H12v4.5h6.5c-.1 1.1-.8 2.7-2.4 3.8l-.1.1 3.5 2.7.2.1c2.2-2 3.8-5 3.8-8.9z"
+                    />
+                    <path
+                      fill="#34A853"
+                      d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.8-2.9c-1 .7-2.4 1.2-4.1 1.2-3.1 0-5.8-2.1-6.8-5l-.1.1-3.6 2.8v.1C3.5 21.3 7.5 24 12 24z"
+                    />
+                    <path
+                      fill="#FBBC05"
+                      d="M5.2 14.4c-.2-.7-.4-1.5-.4-2.4s.1-1.7.4-2.4l-.1-.1-3.6-2.8-.1.1C.5 8.6 0 10.2 0 12s.5 3.4 1.4 4.9l3.8-2.5z"
+                    />
+                    <path
+                      fill="#EA4335"
+                      d="M12 4.7c1.8 0 3 .8 3.7 1.4l3.3-3.2C17.9 1.1 15.2 0 12 0 7.5 0 3.5 2.7 1.4 6.7l3.8 2.9c1-2.8 3.6-4.9 6.8-4.9z"
+                    /></svg
+                ></span>
+                <div>
+                  <div class="stars">★★★★★</div>
+                  <div class="review-name">Mohamed L.</div>
+                </div>
+              </div>
+            </article>
+            <article class="review-card">
+              <p class="review-text">
+                « Clinique très propre et lumineuse. Mes enfants n'ont plus peur
+                d'aller chez le dentiste. Merci pour votre patience ! »
+              </p>
+              <div class="review-foot">
+                <span class="review-g" aria-hidden="true"
+                  ><svg viewBox="0 0 24 24" width="20" height="20">
+                    <path
+                      fill="#4285F4"
+                      d="M23.5 12.3c0-.9-.1-1.5-.3-2.3H12v4.5h6.5c-.1 1.1-.8 2.7-2.4 3.8l-.1.1 3.5 2.7.2.1c2.2-2 3.8-5 3.8-8.9z"
+                    />
+                    <path
+                      fill="#34A853"
+                      d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.8-2.9c-1 .7-2.4 1.2-4.1 1.2-3.1 0-5.8-2.1-6.8-5l-.1.1-3.6 2.8v.1C3.5 21.3 7.5 24 12 24z"
+                    />
+                    <path
+                      fill="#FBBC05"
+                      d="M5.2 14.4c-.2-.7-.4-1.5-.4-2.4s.1-1.7.4-2.4l-.1-.1-3.6-2.8-.1.1C.5 8.6 0 10.2 0 12s.5 3.4 1.4 4.9l3.8-2.5z"
+                    />
+                    <path
+                      fill="#EA4335"
+                      d="M12 4.7c1.8 0 3 .8 3.7 1.4l3.3-3.2C17.9 1.1 15.2 0 12 0 7.5 0 3.5 2.7 1.4 6.7l3.8 2.9c1-2.8 3.6-4.9 6.8-4.9z"
+                    /></svg
+                ></span>
+                <div>
+                  <div class="stars">★★★★★</div>
+                  <div class="review-name">Lina H.</div>
+                </div>
+              </div>
+            </article>
+            <article class="review-card">
+              <p class="review-text">
+                « Excellent suivi après la pose de ma couronne. Paiement par
+                facilité très arrangeant. Travail sérieux et professionnel. »
+              </p>
+              <div class="review-foot">
+                <span class="review-g" aria-hidden="true"
+                  ><svg viewBox="0 0 24 24" width="20" height="20">
+                    <path
+                      fill="#4285F4"
+                      d="M23.5 12.3c0-.9-.1-1.5-.3-2.3H12v4.5h6.5c-.1 1.1-.8 2.7-2.4 3.8l-.1.1 3.5 2.7.2.1c2.2-2 3.8-5 3.8-8.9z"
+                    />
+                    <path
+                      fill="#34A853"
+                      d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.8-2.9c-1 .7-2.4 1.2-4.1 1.2-3.1 0-5.8-2.1-6.8-5l-.1.1-3.6 2.8v.1C3.5 21.3 7.5 24 12 24z"
+                    />
+                    <path
+                      fill="#FBBC05"
+                      d="M5.2 14.4c-.2-.7-.4-1.5-.4-2.4s.1-1.7.4-2.4l-.1-.1-3.6-2.8-.1.1C.5 8.6 0 10.2 0 12s.5 3.4 1.4 4.9l3.8-2.5z"
+                    />
+                    <path
+                      fill="#EA4335"
+                      d="M12 4.7c1.8 0 3 .8 3.7 1.4l3.3-3.2C17.9 1.1 15.2 0 12 0 7.5 0 3.5 2.7 1.4 6.7l3.8 2.9c1-2.8 3.6-4.9 6.8-4.9z"
+                    /></svg
+                ></span>
+                <div>
+                  <div class="stars">★★★★★</div>
+                  <div class="review-name">Karim T.</div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Task 5.2: Clinic Gallery -->
+      <section class="section section-alt" id="clinique">
+        <div class="container">
+          <p class="section-kicker">Notre clinique</p>
+          <h2 class="section-title">Découvrez nos espaces</h2>
+          <p class="section-desc">
+            Survolez l'image principale pour faire défiler, ou cliquez sur une
+            vignette.
+          </p>
+          <div class="gallery">
+            <figure class="gallery-main" id="galleryMain">
+              <img
+                id="galleryMainImg"
+                src="imgs%20clinique/%7B45D72C74-0B48-48F0-B2A2-9CBEFDD9FAF6%7D.png"
+                alt="Salle de soin moderne de la clinique"
+              />
+              <figcaption class="gallery-caption">
+                <strong id="galleryCaptionTitle">Salle de soin moderne</strong
+                ><span id="galleryCaptionSub"
+                  >Équipements de dernière génération</span
+                >
+              </figcaption>
+            </figure>
+            <div class="gallery-thumbs" role="list">
+              <button
+                type="button"
+                class="gallery-thumb is-active"
+                data-src="imgs%20clinique/%7B45D72C74-0B48-48F0-B2A2-9CBEFDD9FAF6%7D.png"
+                data-title="Salle de soin moderne"
+                data-sub="Équipements de dernière génération"
+                role="listitem"
+              >
+                <img
+                  src="imgs%20clinique/%7B45D72C74-0B48-48F0-B2A2-9CBEFDD9FAF6%7D.png"
+                  alt="Salle de soin"
+                  loading="lazy"
+                /><span class="thumb-shade">Salle de soin</span>
+              </button>
+              <button
+                type="button"
+                class="gallery-thumb"
+                data-src="imgs%20clinique/%7B696A136D-D1EC-4E5A-8376-C378B6F7B03D%7D.png"
+                data-title="Accueil lumineux"
+                data-sub="Un espace apaisant dès l'entrée"
+                role="listitem"
+              >
+                <img
+                  src="imgs%20clinique/%7B696A136D-D1EC-4E5A-8376-C378B6F7B03D%7D.png"
+                  alt="Accueil de la clinique"
+                  loading="lazy"
+                /><span class="thumb-shade">Accueil</span>
+              </button>
+              <button
+                type="button"
+                class="gallery-thumb"
+                data-src="imgs%20clinique/%7BCA812A7E-CEB3-4510-A912-B9FE47440C36%7D.png"
+                data-title="Fauteuil ergonomique"
+                data-sub="Confort optimal pendant les soins"
+                role="listitem"
+              >
+                <img
+                  src="imgs%20clinique/%7BCA812A7E-CEB3-4510-A912-B9FE47440C36%7D.png"
+                  alt="Fauteuil dentaire"
+                  loading="lazy"
+                /><span class="thumb-shade">Fauteuil</span>
+              </button>
+              <button
+                type="button"
+                class="gallery-thumb"
+                data-src="imgs%20clinique/%7BD4026D17-A5E6-4282-BD3C-0A5B9D0FF636%7D.png"
+                data-title="Bloc stérilisation"
+                data-sub="Hygiène irréprochable garantie"
+                role="listitem"
+              >
+                <img
+                  src="imgs%20clinique/%7BD4026D17-A5E6-4282-BD3C-0A5B9D0FF636%7D.png"
+                  alt="Équipement de stérilisation"
+                  loading="lazy"
+                /><span class="thumb-shade">Hygiène</span>
+              </button>
+              <button
+                type="button"
+                class="gallery-thumb"
+                data-src="imgs%20clinique/%7BE2B95145-7EB6-46FE-BF14-0619F8FF0E79%7D.png"
+                data-title="Salle d'attente"
+                data-sub="Calme et confort pour toute la famille"
+                role="listitem"
+              >
+                <img
+                  src="imgs%20clinique/%7BE2B95145-7EB6-46FE-BF14-0619F8FF0E79%7D.png"
+                  alt="Salle d'attente"
+                  loading="lazy"
+                /><span class="thumb-shade">Attente</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Task 6.1: Appointment -->
+      <section class="section" id="rdv">
+        <div class="container rdv-grid">
+          <div class="rdv-info">
+            <p class="section-kicker">Rendez-vous</p>
+            <h2 class="section-title">Notre adresse</h2>
+            <ul class="contact-list">
+              <li>
+                <span class="contact-ico">📍</span
+                ><span
+                  >Cité Saïd Hamdine, Les Logts 384, Bt 02 N°03,<br />16000
+                  Alger, Algérie</span
+                >
+              </li>
+              <li>
+                <span class="contact-ico">📞</span
+                ><a href="tel:+213559053879">0559 05 38 79</a>
+              </li>
+              <li>
+                <span class="contact-ico">🕘</span
+                ><span
+                  >Samedi – Jeudi : 9h00 – 17h00<br />Vendredi : fermé</span
+                >
+              </li>
+            </ul>
+            <a class="btn btn-secondary" href="tel:+213559053879"
+              >Appeler la clinique</a
+            >
+          </div>
+          <div class="rdv-formwrap">
+            <h3 class="form-title">Réserver un rendez-vous</h3>
+            <form id="rdvForm" novalidate>
+              <label
+                >Nom complet<input
+                  type="text"
+                  name="nom"
+                  required
+                  autocomplete="name"
+                  placeholder="Votre nom"
+              /></label>
+              <label
+                >Numéro de téléphone<input
+                  type="tel"
+                  name="tel"
+                  required
+                  autocomplete="tel"
+                  placeholder="05 XX XX XX XX"
+                  pattern="[0-9+ ]{9,15}"
+              /></label>
+              <label
+                >La date souhaitée<input type="date" name="date" required
+              /></label>
+              <label
+                >Message (optionnel)<textarea
+                  name="message"
+                  rows="3"
+                  placeholder="Décrivez votre besoin..."
+                ></textarea>
+              </label>
+              <button type="submit" class="btn btn-book">Réserver</button>
+              <p
+                class="form-note"
+                id="formNote"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Task 6.2: Map -->
+      <section class="section section-alt" id="contact">
+        <div class="container">
+          <p class="section-kicker">Où nous trouver</p>
+          <h2 class="section-title">La clinique sur la carte</h2>
+          <div class="map-wrap">
+            <iframe
+              title="Carte Google Maps — Pacific Dental Clinic, Saïd Hamdine Alger"
+              src="https://www.google.com/maps?q=Cit%C3%A9+Sa%C3%AFd+Hamdine,+Alger,+Alg%C3%A9rie&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Task 6.2: Footer -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <img
+              src="imgs/logo.png"
+              alt="Pacific Dental Clinic logo"
+              width="34"
+              height="28"
+            /><span>Pacific Dental <strong>Dr Bedjaoui</strong></span>
+          </div>
+          <p>
+            Clinique dentaire moderne à Saïd Hamdine, Alger. Soins doux, hygiène
+            irréprochable et sourire éclatant pour toute la famille.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h3>Liens rapides</h3>
+          <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#traitements">Nos traitements</a></li>
+            <li><a href="#temoignages">Témoignages</a></li>
+            <li><a href="#rdv">Prendre RDV</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul class="footer-contact">
+            <li>Cité Saïd Hamdine, Logts 384, Bt 02 N°03, Alger</li>
+            <li><a href="tel:+213559053879">0559 05 38 79</a></li>
+            <li>Sam – Jeu : 9h00 – 17h00 · Ven : fermé</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <span
+            >© 2026 Pacific Dental Clinic Dr Bedjaoui. Tous droits
+            réservés.</span
+          >
+          <span>Site conçu avec soin.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
