@@ -6,9 +6,9 @@
     "semantic_hash": ""
   },
   "TASKS.md": {
-    "mtime": 1789835298.738103,
-    "seen": 1789845276.729808,
-    "ast_hash": "1b2622405479e36a3ee557cfbc620004",
+    "mtime": 1789852478.3940306,
+    "seen": 1789852481.2343078,
+    "ast_hash": "7ff99a4318cdbd008b9f7c7612622519",
     "semantic_hash": ""
   },
   "TRD.md": {
@@ -18,9 +18,9 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1789845269.6340203,
-    "seen": 1789845276.729813,
-    "ast_hash": "93441624240fd4537c04b625093a1421",
+    "mtime": 1789853405.0316758,
+    "seen": 1789853407.7237148,
+    "ast_hash": "85135cc43220528066da06534d7ac022",
     "semantic_hash": ""
   },
   "imgs/Couronne sur Implant.png": {
@@ -33,12 +33,6 @@
     "mtime": 1789839692.541148,
     "seen": 1789845276.7298164,
     "ast_hash": "afb19e7cf242993f16feb944220a8639",
-    "semantic_hash": ""
-  },
-  "imgs/Firefly_RemoveBackground.png": {
-    "mtime": 1789839346.281761,
-    "seen": 1789845276.729818,
-    "ast_hash": "9433e7f0743cd8adfa62424bdb12c31e",
     "semantic_hash": ""
   },
   "imgs/Invisalign.png": {
@@ -59,12 +53,6 @@
     "ast_hash": "dff926ec21070689d6756984d45176f5",
     "semantic_hash": ""
   },
-  "imgs/main.png": {
-    "mtime": 1789839410.281668,
-    "seen": 1789845276.7298238,
-    "ast_hash": "0485a1e86878555f1073d43e908c6d98",
-    "semantic_hash": ""
-  },
   "imgs/pexels-karola-g-6627599-removebg-preview.png": {
     "mtime": 1789839852.8588722,
     "seen": 1789845276.7298255,
@@ -75,6 +63,84 @@
     "mtime": 1789840124.8988307,
     "seen": 1789845276.729827,
     "ast_hash": "674712d4e2477d6815445fb12865ac02",
+    "semantic_hash": ""
+  },
+  "script.js": {
+    "mtime": 1789853248.3513958,
+    "seen": 1789853251.5585723,
+    "ast_hash": "f883e9997ef6fae9b4f6b5d334dc1ea6",
+    "semantic_hash": ""
+  },
+  "imgs clinique/{CA812A7E-CEB3-4510-A912-B9FE47440C36}.png": {
+    "mtime": 1789845698.5395465,
+    "seen": 1789845739.9139385,
+    "ast_hash": "6b373e507943da7123ea2c0f6453e86d",
+    "semantic_hash": ""
+  },
+  "imgs clinique/{45D72C74-0B48-48F0-B2A2-9CBEFDD9FAF6}.png": {
+    "mtime": 1789845774.6787076,
+    "seen": 1789845818.4772236,
+    "ast_hash": "08274c13d6b5f39dd240f1fb73b8bee6",
+    "semantic_hash": ""
+  },
+  "imgs clinique/{696A136D-D1EC-4E5A-8376-C378B6F7B03D}.png": {
+    "mtime": 1789845755.1947467,
+    "seen": 1789845818.4772277,
+    "ast_hash": "7a0d92860c39bb2afb606dbacc5eb7d5",
+    "semantic_hash": ""
+  },
+  "imgs clinique/{D4026D17-A5E6-4282-BD3C-0A5B9D0FF636}.png": {
+    "mtime": 1789845788.2713084,
+    "seen": 1789845818.4772348,
+    "ast_hash": "c718b207b4c28a246052fc1b4dc7df80",
+    "semantic_hash": ""
+  },
+  "imgs clinique/{E2B95145-7EB6-46FE-BF14-0619F8FF0E79}.png": {
+    "mtime": 1789845738.47875,
+    "seen": 1789845818.4772377,
+    "ast_hash": "2870fdc53a0c1a9e25fde9cd72719b92",
+    "semantic_hash": ""
+  },
+  "imgs/logo.png": {
+    "mtime": 1789846273.868362,
+    "seen": 1789846321.3486478,
+    "ast_hash": "f20f832b1321224cb859e9dd71dd8318",
+    "semantic_hash": ""
+  },
+  "imgs/main2.png": {
+    "mtime": 1789849385.301164,
+    "seen": 1789849493.22793,
+    "ast_hash": "af33550fdb8b89875ed034fe1e2fb865",
+    "semantic_hash": ""
+  },
+  "imgs/Couronne sur Implant.jpg": {
+    "mtime": 1789853393.1568375,
+    "seen": 1789853407.723728,
+    "ast_hash": "c1def102cc461dfc44d0f8e1eaa69239",
+    "semantic_hash": ""
+  },
+  "imgs/Invisalign.jpg": {
+    "mtime": 1789853392.457505,
+    "seen": 1789853407.7237334,
+    "ast_hash": "2d5ab88258e9233de25529146f3a63bf",
+    "semantic_hash": ""
+  },
+  "imgs/L'Implantation Dentaire.jpg": {
+    "mtime": 1789853393.7852077,
+    "seen": 1789853407.7237372,
+    "ast_hash": "ebf60aff89de09de50b201dfa3122a50",
+    "semantic_hash": ""
+  },
+  "imgs/facettes.jpg": {
+    "mtime": 1789853391.5113914,
+    "seen": 1789853407.7237413,
+    "ast_hash": "3713d0e01bf9ad9f9456311c7d0e30d4",
+    "semantic_hash": ""
+  },
+  "imgs/main2.jpg": {
+    "mtime": 1789853394.8202033,
+    "seen": 1789853407.7237463,
+    "ast_hash": "a9e591621041e9445bb9da14b29f1244",
     "semantic_hash": ""
   }
 }

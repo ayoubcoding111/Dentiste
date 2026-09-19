@@ -32,7 +32,20 @@
   });
 })();
 
-// Task 4.1: treatments horizontal scroll buttons
+// Task 5.1: duplicate review cards for seamless infinite rows
+// Each track is cloned to 4 identical copies; the CSS animation shifts -50%
+// (2 copies), which loops seamlessly and never stops.
+(function () {
+  document.querySelectorAll("[data-reviews-track]").forEach(function (track) {
+    var clone = track.innerHTML;
+    track.innerHTML += clone + clone + clone;
+    Array.prototype.forEach.call(track.children, function (el, i) {
+      if (i >= track.children.length / 2) el.setAttribute("aria-hidden", "true");
+    });
+  });
+})();
+
+// Task 4.1: mobile arrows scroll exactly one card left / right
 (function () {
   var scroll = document.getElementById("treatScroll");
   var prev = document.getElementById("treatPrev");
@@ -40,10 +53,47 @@
   if (!scroll || !prev || !next) return;
   var step = function () {
     var card = scroll.querySelector(".treat-card");
-    return card ? card.offsetWidth + 20 : 300;
+    if (!card) return 300;
+    var gap = parseFloat(
+      (window.getComputedStyle(scroll).columnGap ||
+        window.getComputedStyle(scroll).gap ||
+        "0").replace("px", "")
+    ) || 0;
+    return card.offsetWidth + gap;
   };
   prev.addEventListener("click", function () { scroll.scrollBy({ left: -step(), behavior: "smooth" }); });
   next.addEventListener("click", function () { scroll.scrollBy({ left: step(), behavior: "smooth" }); });
+})();
+
+// Task 4.1: manual infinite scroll — reaching the end wraps to the first card
+(function () {
+  var scroll = document.getElementById("treatScroll");
+  if (!scroll) return;
+  // Triple the cards so scrolling wraps seamlessly in both directions
+  var originals = Array.prototype.slice.call(scroll.children);
+  [0, 1].forEach(function () {
+    originals.forEach(function (c) {
+      var cl = c.cloneNode(true);
+      cl.setAttribute("aria-hidden", "true");
+      cl.querySelectorAll("a").forEach(function (a) { a.tabIndex = -1; });
+      scroll.appendChild(cl);
+    });
+  });
+  var third = function () { return scroll.scrollWidth / 3; };
+  // Start on the middle copy
+  scroll.scrollLeft = third();
+  var wrapping = false;
+  scroll.addEventListener("scroll", function () {
+    if (wrapping) { wrapping = false; return; }
+    var w = third();
+    if (scroll.scrollLeft >= w * 2) {
+      wrapping = true;
+      scroll.scrollLeft -= w;
+    } else if (scroll.scrollLeft <= 0) {
+      wrapping = true;
+      scroll.scrollLeft += w;
+    }
+  }, { passive: true });
 })();
 
 // Task 4.2: Before / After sliders
@@ -119,6 +169,42 @@
   }
 })();
 
+// Task 6.1: country select updates the phone prefix
+// Options carry full "+213 Algérie" labels; the closed select shows only
+// the short code (DZ) via data-short so the unit stays compact.
+(function () {
+  var cc = document.getElementById("cc");
+  var prefix = document.getElementById("phonePrefix");
+  if (!cc || !prefix) return;
+  var sync = function () {
+    Array.prototype.forEach.call(cc.options, function (opt) {
+      if (!opt.getAttribute("data-full")) opt.setAttribute("data-full", opt.textContent);
+      opt.textContent = opt.selected ? opt.getAttribute("data-short") : opt.getAttribute("data-full");
+    });
+    prefix.textContent = cc.value;
+  };
+  cc.addEventListener("change", sync);
+  sync();
+})();
+
+// Task 6.1: clicking the date field opens the calendar popup
+(function () {
+  var date = document.getElementById("date");
+  if (!date || typeof date.showPicker !== "function") return;
+  date.addEventListener("click", function () {
+    try { date.showPicker(); } catch (e) {}
+  });
+})();
+
+// Task 6.1: phone field accepts digits only
+(function () {
+  var tel = document.getElementById("tel");
+  if (!tel) return;
+  tel.addEventListener("input", function () {
+    tel.value = tel.value.replace(/[^0-9]/g, "");
+  });
+})();
+
 // Task 6.1: RDV form (front-end only)
 (function () {
   var form = document.getElementById("rdvForm");
@@ -158,7 +244,7 @@
 
 // Reveal on scroll
 (function () {
-  var els = document.querySelectorAll(".section .container, .trust .about");
+  var els = document.querySelectorAll(".section .container, .booking-grid, .trust .about");
   els.forEach(function (el) { el.classList.add("reveal"); });
   if (!("IntersectionObserver" in window)) {
     els.forEach(function (el) { el.classList.add("visible"); });

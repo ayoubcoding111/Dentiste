@@ -18,9 +18,9 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1789853405.0316758,
-    "seen": 1789853407.7237148,
-    "ast_hash": "85135cc43220528066da06534d7ac022",
+    "mtime": 1789860861.4024563,
+    "seen": 1789860864.34161,
+    "ast_hash": "f04da0e04598d1352b40213652b57f3b",
     "semantic_hash": ""
   },
   "imgs/Couronne sur Implant.png": {
@@ -66,9 +66,9 @@
     "semantic_hash": ""
   },
   "script.js": {
-    "mtime": 1789853248.3513958,
-    "seen": 1789853251.5585723,
-    "ast_hash": "f883e9997ef6fae9b4f6b5d334dc1ea6",
+    "mtime": 1789859886.1984224,
+    "seen": 1789859889.1694148,
+    "ast_hash": "3d8bbabf2b28f6e0eb661ebc8aa7f698",
     "semantic_hash": ""
   },
   "imgs clinique/{CA812A7E-CEB3-4510-A912-B9FE47440C36}.png": {
@@ -132,15 +132,21 @@
     "semantic_hash": ""
   },
   "imgs/facettes.jpg": {
-    "mtime": 1789853391.5113914,
-    "seen": 1789853407.7237413,
-    "ast_hash": "3713d0e01bf9ad9f9456311c7d0e30d4",
+    "mtime": 1789854794.2584622,
+    "seen": 1789854826.3230958,
+    "ast_hash": "a2b94a918b2f2a1f2a82dc8ac3674afb",
     "semantic_hash": ""
   },
   "imgs/main2.jpg": {
     "mtime": 1789853394.8202033,
     "seen": 1789853407.7237463,
     "ast_hash": "a9e591621041e9445bb9da14b29f1244",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1789853913.1334457,
+    "seen": 1789854111.2649229,
+    "ast_hash": "abb53f9bef79e45fe32a7594a49a3162",
     "semantic_hash": ""
   }
 }

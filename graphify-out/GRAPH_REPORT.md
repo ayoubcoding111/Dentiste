@@ -1,13 +1,18 @@
 # Graph Report - Dentiste website  (2026-09-19)
 
 ## Corpus Check
-- 4 files · ~4,472,276 words
+- 5 files · ~4,234,380 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 11 nodes · 8 edges · 3 communities
+- 12 nodes · 8 edges · 4 communities
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `f6b1f81f`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - Pacific Dental Clinic - Project Execution Plan
@@ -27,7 +32,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (3 total, 0 thin omitted)
+## Communities (4 total, 0 thin omitted)
 
 ### Community 0 - "Pacific Dental Clinic - Project Execution Plan"
 Cohesion: 0.25
@@ -35,7 +40,7 @@ Nodes (7): Pacific Dental Clinic - Project Execution Plan, Phase 1: Project Setu
 
 ## Knowledge Gaps
 - **6 isolated node(s):** `Phase 1: Project Setup & Foundation`, `Phase 2: Navigation & Header`, `Phase 3: Hero & Trust Sections`, `Phase 4: Treatments & Interactive Before/After Grid`, `Phase 5: Testimonials & Clinic Gallery` (+1 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 10 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 11 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
