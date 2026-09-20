@@ -24,6 +24,14 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  overflow-x: clip;
+}
+
+.booking-grid,
+.booking-card,
+.booking-form {
+  min-width: 0;
+  max-width: 100%;
 }
 
 h1,
@@ -1346,8 +1354,29 @@ html {
     0 2px 12px rgba(16, 40, 75, 0.07);
 }
 /* date field: fake placeholder overlay, hides once a date is picked */
+.booking-form > * {
+  min-width: 0;
+  max-width: 100%;
+}
 .booking-form .date-wrap {
   position: relative;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+.booking-form input[type="date"] {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+}
+.booking-form input[type="date"]::-webkit-datetime-edit {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.booking-form input[type="date"]::-webkit-calendar-picker-indicator {
+  flex-shrink: 0;
+  margin: 0;
 }
 .booking-form .date-placeholder {
   position: absolute;
