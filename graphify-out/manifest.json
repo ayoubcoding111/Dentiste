@@ -18,9 +18,9 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1789860861.4024563,
-    "seen": 1789860864.34161,
-    "ast_hash": "f04da0e04598d1352b40213652b57f3b",
+    "mtime": 1789910273.4952528,
+    "seen": 1789910276.503804,
+    "ast_hash": "8d1081c5a332223a08d2526b9fa7da35",
     "semantic_hash": ""
   },
   "imgs/Couronne sur Implant.png": {
@@ -66,9 +66,9 @@
     "semantic_hash": ""
   },
   "script.js": {
-    "mtime": 1789859886.1984224,
-    "seen": 1789859889.1694148,
-    "ast_hash": "3d8bbabf2b28f6e0eb661ebc8aa7f698",
+    "mtime": 1789909838.204246,
+    "seen": 1789909841.0630167,
+    "ast_hash": "b7e53411e18beed9ed68d121e9b336d4",
     "semantic_hash": ""
   },
   "imgs clinique/{CA812A7E-CEB3-4510-A912-B9FE47440C36}.png": {
@@ -147,6 +147,48 @@
     "mtime": 1789853913.1334457,
     "seen": 1789854111.2649229,
     "ast_hash": "abb53f9bef79e45fe32a7594a49a3162",
+    "semantic_hash": ""
+  },
+  "imgs/main.png": {
+    "mtime": 1789906776.847713,
+    "seen": 1789906985.2806597,
+    "ast_hash": "138dd7f06c5c8af834a3316961b34503",
+    "semantic_hash": ""
+  },
+  "before after/first1.jpg": {
+    "mtime": 1789908740.420051,
+    "seen": 1789909069.606847,
+    "ast_hash": "e736a02ebf82cc5649c2235664d18978",
+    "semantic_hash": ""
+  },
+  "before after/first2.jpg": {
+    "mtime": 1789908327.409678,
+    "seen": 1789909069.6068492,
+    "ast_hash": "56065ae5a1d8d17a914071305621b752",
+    "semantic_hash": ""
+  },
+  "before after/second1.jpg": {
+    "mtime": 1789908574.8651736,
+    "seen": 1789908981.0030184,
+    "ast_hash": "6ec70df0a46350630b59d31ab7c05301",
+    "semantic_hash": ""
+  },
+  "before after/second2.jpg": {
+    "mtime": 1789908592.2798507,
+    "seen": 1789908981.0030198,
+    "ast_hash": "6d008653ea2db84bfe5c57bc76d9dd0a",
+    "semantic_hash": ""
+  },
+  "before after/third1.jpg": {
+    "mtime": 1789908583.6398907,
+    "seen": 1789908981.0030212,
+    "ast_hash": "480e12ce464b9f1a7fe307910fe8b281",
+    "semantic_hash": ""
+  },
+  "before after/third2.jpg": {
+    "mtime": 1789908600.1094663,
+    "seen": 1789908981.003023,
+    "ast_hash": "bac8bc37e36f95f1477319da2fa4c76a",
     "semantic_hash": ""
   }
 }

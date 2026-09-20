@@ -65,6 +65,26 @@
   next.addEventListener("click", function () { scroll.scrollBy({ left: step(), behavior: "smooth" }); });
 })();
 
+// Task 4.2: same arrows mechanics for Before / After — scroll exactly one slider
+(function () {
+  var scroll = document.getElementById("baScroll");
+  var prev = document.getElementById("baPrev");
+  var next = document.getElementById("baNext");
+  if (!scroll || !prev || !next) return;
+  var step = function () {
+    var card = scroll.querySelector(".ba-slider");
+    if (!card) return 300;
+    var gap = parseFloat(
+      (window.getComputedStyle(scroll).columnGap ||
+        window.getComputedStyle(scroll).gap ||
+        "0").replace("px", "")
+    ) || 0;
+    return card.offsetWidth + gap;
+  };
+  prev.addEventListener("click", function () { scroll.scrollBy({ left: -step(), behavior: "smooth" }); });
+  next.addEventListener("click", function () { scroll.scrollBy({ left: step(), behavior: "smooth" }); });
+})();
+
 // Task 4.1: manual infinite scroll — reaching the end wraps to the first card
 (function () {
   var scroll = document.getElementById("treatScroll");
@@ -76,6 +96,36 @@
       var cl = c.cloneNode(true);
       cl.setAttribute("aria-hidden", "true");
       cl.querySelectorAll("a").forEach(function (a) { a.tabIndex = -1; });
+      scroll.appendChild(cl);
+    });
+  });
+  var third = function () { return scroll.scrollWidth / 3; };
+  // Start on the middle copy
+  scroll.scrollLeft = third();
+  var wrapping = false;
+  scroll.addEventListener("scroll", function () {
+    if (wrapping) { wrapping = false; return; }
+    var w = third();
+    if (scroll.scrollLeft >= w * 2) {
+      wrapping = true;
+      scroll.scrollLeft -= w;
+    } else if (scroll.scrollLeft <= 0) {
+      wrapping = true;
+      scroll.scrollLeft += w;
+    }
+  }, { passive: true });
+})();
+
+// Task 4.2: manual infinite scroll like Treatments — end wraps to first pic
+(function () {
+  var scroll = document.getElementById("baScroll");
+  if (!scroll) return;
+  // Triple the sliders so scrolling wraps seamlessly in both directions.
+  // Must run BEFORE the [data-ba] init below so clones get compare handlers.
+  var originals = Array.prototype.slice.call(scroll.children);
+  [0, 1].forEach(function () {
+    originals.forEach(function (c) {
+      var cl = c.cloneNode(true);
       scroll.appendChild(cl);
     });
   });
@@ -226,19 +276,46 @@
   });
 })();
 
-// FR / AR language toggle (lightweight, data-fr / data-ar attributes)
+// FR / AR language dropdown (globe + menu, data-fr / data-ar attributes)
 (function () {
+  var dropdown = document.getElementById("langDropdown");
   var btn = document.getElementById("langSwitch");
-  if (!btn) return;
-  var current = "fr";
-  btn.addEventListener("click", function () {
-    current = current === "fr" ? "ar" : "fr";
-    document.documentElement.lang = current === "ar" ? "ar" : "fr";
-    document.documentElement.dir = current === "ar" ? "rtl" : "ltr";
-    btn.textContent = current === "ar" ? "AR" : "FR";
-    document.querySelectorAll("[data-fr]").forEach(function (el) {
-      el.innerHTML = current === "ar" ? el.getAttribute("data-ar") : el.getAttribute("data-fr");
+  var menu = document.getElementById("langMenu");
+  var current = document.getElementById("langCurrent");
+  if (!dropdown || !btn || !menu) return;
+  var lang = "fr";
+  var setLang = function (next) {
+    lang = next;
+    document.documentElement.lang = lang === "ar" ? "ar" : "fr";
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+    if (current) current.textContent = lang === "ar" ? "AR" : "FR";
+    menu.querySelectorAll("[data-lang]").forEach(function (opt) {
+      opt.classList.toggle("is-active", opt.getAttribute("data-lang") === lang);
     });
+    document.querySelectorAll("[data-fr]").forEach(function (el) {
+      el.innerHTML = lang === "ar" ? el.getAttribute("data-ar") : el.getAttribute("data-fr");
+    });
+  };
+  var close = function () {
+    dropdown.classList.remove("open");
+    btn.setAttribute("aria-expanded", "false");
+  };
+  btn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    var open = dropdown.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  menu.addEventListener("click", function (e) {
+    var opt = e.target.closest("[data-lang]");
+    if (!opt) return;
+    setLang(opt.getAttribute("data-lang"));
+    close();
+  });
+  document.addEventListener("click", function (e) {
+    if (!dropdown.contains(e.target)) close();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") close();
   });
 })();
 

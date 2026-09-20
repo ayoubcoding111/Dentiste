@@ -10,7 +10,7 @@
       name="description"
       content="Pacific Dental Clinic Dr Bedjaoui à Saïd Hamdine, Alger. Soins dentaires modernes, doux et professionnels. Facettes, Invisalign, implants. Prenez rendez-vous en ligne."
     />
-    <link rel="stylesheet" href="style.css?v=3" />
+    <link rel="stylesheet" href="style.css?v=13" />
   </head>
   <body>
     <!-- Task 2.1: Header / Navigation Bar -->
@@ -53,14 +53,60 @@
         </ul>
 
         <div class="nav-actions">
-          <button
-            type="button"
-            class="lang-switch"
-            id="langSwitch"
-            aria-label="Changer de langue"
-          >
-            FR
-          </button>
+          <div class="lang-dropdown" id="langDropdown">
+            <button
+              type="button"
+              class="lang-switch"
+              id="langSwitch"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-label="Changer de langue"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M2 12h20" />
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                />
+              </svg>
+              <span id="langCurrent">FR</span>
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <ul class="lang-menu" id="langMenu" role="menu">
+              <li role="none">
+                <button type="button" data-lang="fr" class="is-active" role="menuitem">
+                  Français
+                </button>
+              </li>
+              <li role="none">
+                <button type="button" data-lang="ar" role="menuitem">
+                  العربية
+                </button>
+              </li>
+            </ul>
+          </div>
           <a
             href="#rdv"
             class="btn btn-primary"
@@ -130,7 +176,7 @@
         </div>
         <div class="hero-media">
           <img
-            src="imgs/main2.jpg"
+            src="imgs/main.png"
             alt="Patient au sourire éclatant après un soin à Pacific Dental Clinic"
             class="hero-img"
             fetchpriority="high"
@@ -218,7 +264,9 @@
                   loading="lazy"
                   style="
                     object-position: top center;
-                    clip-path: inset(40px 0 0 0);
+                    clip-path: inset(80px 0 0 0);
+                    transform: translateY(-30px);
+                    height: calc(100% + 30px);
                   "
                 />
               </div>
@@ -314,26 +362,43 @@
         </div>
       </section>
 
-      <!-- Task 4.2: Real Results -->
+      <!-- Task 4.2: Real Results — same mechanics as Treatments -->
       <section class="section section-alt" id="resultats">
-        <div class="container">
-          <p class="section-kicker">Résultats réels</p>
-          <h2 class="section-title">Avant / Après : des résultats visibles</h2>
-          <p class="section-desc">
-            Faites glisser le curseur au centre pour comparer. Photos à
-            remplacer par les cas cliniques réels.
-          </p>
-          <div class="ba-grid">
+        <div class="container section-head">
+          <div>
+            <p class="section-kicker">Résultats réels</p>
+            <h2 class="section-title">Avant / Après : des résultats visibles</h2>
+            <p class="section-desc">
+              Faites défiler pour découvrir nos cas. Faites glisser le curseur
+              au centre pour comparer.
+            </p>
+          </div>
+        </div>
+        <div class="container ba-wrap">
+          <button
+            type="button"
+            class="treat-arrow treat-arrow--side treat-arrow--prev"
+            id="baPrev"
+            aria-label="Voir les résultats précédents"
+          >
+            ←
+          </button>
+          <div
+            class="ba-scroll"
+            id="baScroll"
+            tabindex="0"
+            aria-label="Liste des résultats avant après, faites défiler horizontalement"
+          >
             <div class="ba-slider" data-ba>
               <img
-                src="imgs/main2.jpg"
+                src="before%20after/first2.jpg"
                 alt="Résultat après traitement - cas 1"
                 class="ba-img ba-after"
                 loading="lazy"
               />
               <div class="ba-before" data-ba-before>
                 <img
-                  src="imgs/main2.jpg"
+                  src="before%20after/first1.jpg"
                   alt="État avant traitement - cas 1"
                   class="ba-img ba-before-img"
                   loading="lazy"
@@ -356,14 +421,14 @@
             </div>
             <div class="ba-slider" data-ba>
               <img
-                src="imgs/facettes.jpg"
+                src="before%20after/second2.jpg"
                 alt="Résultat après traitement - cas 2"
                 class="ba-img ba-after"
                 loading="lazy"
               />
               <div class="ba-before" data-ba-before>
                 <img
-                  src="imgs/facettes.jpg"
+                  src="before%20after/second1.jpg"
                   alt="État avant traitement - cas 2"
                   class="ba-img ba-before-img"
                   loading="lazy"
@@ -384,7 +449,45 @@
                 aria-label="Curseur de comparaison avant après, cas 2"
               />
             </div>
+            <div class="ba-slider" data-ba>
+              <img
+                src="before%20after/third2.jpg"
+                alt="Résultat après traitement - cas 3"
+                class="ba-img ba-after"
+                loading="lazy"
+              />
+              <div class="ba-before" data-ba-before>
+                <img
+                  src="before%20after/third1.jpg"
+                  alt="État avant traitement - cas 3"
+                  class="ba-img ba-before-img"
+                  loading="lazy"
+                />
+              </div>
+              <span class="ba-label ba-label--before">Avant</span>
+              <span class="ba-label ba-label--after">Après</span>
+              <div class="ba-handle" data-ba-handle>
+                <span class="ba-knob">⇔</span>
+              </div>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                class="ba-range"
+                data-ba-range
+                aria-label="Curseur de comparaison avant après, cas 3"
+              />
+            </div>
           </div>
+          <button
+            type="button"
+            class="treat-arrow treat-arrow--side treat-arrow--next"
+            id="baNext"
+            aria-label="Voir les résultats suivants"
+          >
+            →
+          </button>
         </div>
       </section>
 
@@ -1231,6 +1334,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=3"></script>
   </body>
 </html>

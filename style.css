@@ -56,8 +56,8 @@ html {
   right: 0;
   z-index: 100;
   background: rgba(183, 211, 253, 0.8);
-  backdrop-filter: blur(14px) saturate(1.4);
-  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  backdrop-filter: blur(6px) saturate(1.4);
+  -webkit-backdrop-filter: blur(6px) saturate(1.4);
   border-bottom: 1px solid rgba(59, 130, 246, 0.15);
 }
 
@@ -152,6 +152,9 @@ html {
   padding: 8px 10px;
   border-radius: 8px;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   transition:
     color 0.2s ease,
     background 0.2s ease;
@@ -160,6 +163,53 @@ html {
 .lang-switch:hover {
   color: var(--primary);
   background: rgba(59, 130, 246, 0.1);
+}
+
+.lang-dropdown {
+  position: relative;
+}
+
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 140px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: var(--white);
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(16, 40, 75, 0.18);
+  display: none;
+  z-index: 120;
+}
+
+.lang-dropdown.open .lang-menu {
+  display: block;
+}
+
+.lang-menu button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.lang-menu button:hover {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.lang-menu button.is-active {
+  font-weight: 700;
+  color: var(--primary);
 }
 
 .btn {
@@ -397,12 +447,34 @@ html {
   .hero {
     grid-template-columns: 1fr;
     gap: 0;
-    text-align: left;
+    text-align: center;
     min-height: 0;
   }
   .hero-text {
     padding: 32px 20px 12px;
     transform: none;
+    text-align: center;
+    align-items: center;
+  }
+  .hero-text h1,
+  .hero-sub,
+  .hero-intro {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Mobile: centralize all section titles + sub texts */
+  .section-kicker,
+  .section-title,
+  .section-desc {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section-head {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
   .hero-intro {
     margin-bottom: 0;
@@ -423,7 +495,7 @@ html {
   }
   .hero-img {
     position: relative;
-    top: 0;
+    top: -30px;
     width: 100%;
     height: auto;
     aspect-ratio: auto;
@@ -433,7 +505,7 @@ html {
     transform: scaleX(-1);
     background: #d9e9ff;
     clip-path: inset(0 0 80px 0);
-    margin-bottom: -80px;
+    margin-bottom: -110px;
   }
   .hero-media::after {
     content: "";
@@ -454,7 +526,7 @@ html {
     position: absolute;
     left: 16px;
     right: 16px;
-    bottom: 50px;
+    bottom: 70px;
     top: auto;
     flex-direction: column;
     align-items: stretch;
@@ -589,11 +661,13 @@ html {
     right: 8px;
   }
   /* One card per view + snap so a tap always lands on a full card */
-  .treatments-scroll {
+  .treatments-scroll,
+  .ba-scroll {
     scroll-snap-type: x mandatory;
     gap: 16px;
   }
-  .treat-card {
+  .treat-card,
+  .ba-slider {
     flex: 0 0 calc(100vw - 32px);
     scroll-snap-align: center;
   }
@@ -759,7 +833,44 @@ html {
   transform: translateX(2px);
 }
 
-/* ===== Task 4.2: Before / After ===== */
+/* ===== Task 4.2: Before / After — same mechanics as Treatments ===== */
+#resultats .section-head {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 32px;
+  max-width: 1400px;
+}
+#resultats .container {
+  max-width: none;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+#resultats .section-head {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+#resultats .section-head .section-desc {
+  margin: 0 auto;
+}
+.ba-wrap {
+  position: relative;
+}
+.ba-scroll {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 6px 32px 18px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.ba-scroll::-webkit-scrollbar {
+  display: none;
+}
 .ba-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -767,9 +878,10 @@ html {
 }
 .ba-slider {
   position: relative;
+  flex: 0 0 clamp(380px, 44vw, 620px);
   border-radius: 20px;
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   background: #d9e9ff;
   border: 1px solid rgba(59, 130, 246, 0.18);
   user-select: none;
@@ -796,7 +908,6 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(0.85) brightness(0.82) sepia(0.25);
   max-width: none;
 }
 .ba-label {
