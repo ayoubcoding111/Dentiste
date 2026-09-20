@@ -1,3 +1,15 @@
+// Mobile hero RDV button — jump straight to the form and focus it for typing
+(function () {
+  var btn = document.querySelector(".hero-cta--overlay a[href='#rdvForm']");
+  if (!btn) return;
+  btn.addEventListener("click", function () {
+    setTimeout(function () {
+      var name = document.getElementById("nom");
+      if (name) name.focus({ preventScroll: true });
+    }, 650);
+  });
+})();
+
 // Pacific Dental Clinic Dr Bedjaoui — base script (Task 1.1)
 // Mobile hamburger menu
 (function () {
@@ -45,49 +57,11 @@
   });
 })();
 
-// Task 4.1: mobile arrows scroll exactly one card left / right
+// Task 4.1: arrows + infinite scroll — wrap-aware so last→first never sticks
 (function () {
   var scroll = document.getElementById("treatScroll");
   var prev = document.getElementById("treatPrev");
   var next = document.getElementById("treatNext");
-  if (!scroll || !prev || !next) return;
-  var step = function () {
-    var card = scroll.querySelector(".treat-card");
-    if (!card) return 300;
-    var gap = parseFloat(
-      (window.getComputedStyle(scroll).columnGap ||
-        window.getComputedStyle(scroll).gap ||
-        "0").replace("px", "")
-    ) || 0;
-    return card.offsetWidth + gap;
-  };
-  prev.addEventListener("click", function () { scroll.scrollBy({ left: -step(), behavior: "smooth" }); });
-  next.addEventListener("click", function () { scroll.scrollBy({ left: step(), behavior: "smooth" }); });
-})();
-
-// Task 4.2: same arrows mechanics for Before / After — scroll exactly one slider
-(function () {
-  var scroll = document.getElementById("baScroll");
-  var prev = document.getElementById("baPrev");
-  var next = document.getElementById("baNext");
-  if (!scroll || !prev || !next) return;
-  var step = function () {
-    var card = scroll.querySelector(".ba-slider");
-    if (!card) return 300;
-    var gap = parseFloat(
-      (window.getComputedStyle(scroll).columnGap ||
-        window.getComputedStyle(scroll).gap ||
-        "0").replace("px", "")
-    ) || 0;
-    return card.offsetWidth + gap;
-  };
-  prev.addEventListener("click", function () { scroll.scrollBy({ left: -step(), behavior: "smooth" }); });
-  next.addEventListener("click", function () { scroll.scrollBy({ left: step(), behavior: "smooth" }); });
-})();
-
-// Task 4.1: manual infinite scroll — reaching the end wraps to the first card
-(function () {
-  var scroll = document.getElementById("treatScroll");
   if (!scroll) return;
   // Triple the cards so scrolling wraps seamlessly in both directions
   var originals = Array.prototype.slice.call(scroll.children);
@@ -100,28 +74,55 @@
     });
   });
   var third = function () { return scroll.scrollWidth / 3; };
+  var step = function () {
+    var card = scroll.querySelector(".treat-card");
+    if (!card) return 300;
+    var gap = parseFloat(
+      (window.getComputedStyle(scroll).columnGap ||
+        window.getComputedStyle(scroll).gap ||
+        "0").replace("px", "")
+    ) || 0;
+    return card.offsetWidth + gap;
+  };
   // Start on the middle copy
   scroll.scrollLeft = third();
-  var wrapping = false;
+  var suppress = false;
   scroll.addEventListener("scroll", function () {
-    if (wrapping) { wrapping = false; return; }
+    if (suppress) { suppress = false; return; }
     var w = third();
     if (scroll.scrollLeft >= w * 2) {
-      wrapping = true;
+      suppress = true;
       scroll.scrollLeft -= w;
     } else if (scroll.scrollLeft <= 0) {
-      wrapping = true;
+      suppress = true;
       scroll.scrollLeft += w;
     }
   }, { passive: true });
+  var go = function (dir) {
+    var s = step();
+    var w = third();
+    // Pre-jump to the middle copy so the smooth animation never crosses the wrap boundary
+    if (dir > 0 && scroll.scrollLeft + s >= w * 2) {
+      suppress = true;
+      scroll.scrollLeft -= w;
+    } else if (dir < 0 && scroll.scrollLeft - s <= 0) {
+      suppress = true;
+      scroll.scrollLeft += w;
+    }
+    scroll.scrollBy({ left: dir * s, behavior: "smooth" });
+  };
+  if (prev) prev.addEventListener("click", function () { go(-1); });
+  if (next) next.addEventListener("click", function () { go(1); });
 })();
 
-// Task 4.2: manual infinite scroll like Treatments — end wraps to first pic
+// Task 4.2: BA arrows + infinite scroll — same wrap-aware mechanics
+// Must run BEFORE the [data-ba] init below so clones get compare handlers.
 (function () {
   var scroll = document.getElementById("baScroll");
+  var prev = document.getElementById("baPrev");
+  var next = document.getElementById("baNext");
   if (!scroll) return;
   // Triple the sliders so scrolling wraps seamlessly in both directions.
-  // Must run BEFORE the [data-ba] init below so clones get compare handlers.
   var originals = Array.prototype.slice.call(scroll.children);
   [0, 1].forEach(function () {
     originals.forEach(function (c) {
@@ -130,20 +131,44 @@
     });
   });
   var third = function () { return scroll.scrollWidth / 3; };
+  var step = function () {
+    var card = scroll.querySelector(".ba-slider");
+    if (!card) return 300;
+    var gap = parseFloat(
+      (window.getComputedStyle(scroll).columnGap ||
+        window.getComputedStyle(scroll).gap ||
+        "0").replace("px", "")
+    ) || 0;
+    return card.offsetWidth + gap;
+  };
   // Start on the middle copy
   scroll.scrollLeft = third();
-  var wrapping = false;
+  var suppress = false;
   scroll.addEventListener("scroll", function () {
-    if (wrapping) { wrapping = false; return; }
+    if (suppress) { suppress = false; return; }
     var w = third();
     if (scroll.scrollLeft >= w * 2) {
-      wrapping = true;
+      suppress = true;
       scroll.scrollLeft -= w;
     } else if (scroll.scrollLeft <= 0) {
-      wrapping = true;
+      suppress = true;
       scroll.scrollLeft += w;
     }
   }, { passive: true });
+  var go = function (dir) {
+    var s = step();
+    var w = third();
+    if (dir > 0 && scroll.scrollLeft + s >= w * 2) {
+      suppress = true;
+      scroll.scrollLeft -= w;
+    } else if (dir < 0 && scroll.scrollLeft - s <= 0) {
+      suppress = true;
+      scroll.scrollLeft += w;
+    }
+    scroll.scrollBy({ left: dir * s, behavior: "smooth" });
+  };
+  if (prev) prev.addEventListener("click", function () { go(-1); });
+  if (next) next.addEventListener("click", function () { go(1); });
 })();
 
 // Task 4.2: Before / After sliders
@@ -188,6 +213,12 @@
   var thumbs = Array.prototype.slice.call(document.querySelectorAll(".gallery-thumb"));
   if (!mainImg || !thumbs.length) return;
   var idx = 0;
+  var isAr = function () { return document.documentElement.lang === "ar"; };
+  var caption = function () {
+    var t = thumbs[idx];
+    if (title) title.textContent = isAr() && t.getAttribute("data-title-ar") ? t.getAttribute("data-title-ar") : t.getAttribute("data-title");
+    if (sub) sub.textContent = isAr() && t.getAttribute("data-sub-ar") ? t.getAttribute("data-sub-ar") : t.getAttribute("data-sub");
+  };
   var show = function (i) {
     idx = (i + thumbs.length) % thumbs.length;
     var t = thumbs[idx];
@@ -197,11 +228,11 @@
       mainImg.alt = t.querySelector("img").alt;
       mainImg.style.opacity = "1";
     }, 150);
-    if (title) title.textContent = t.getAttribute("data-title");
-    if (sub) sub.textContent = t.getAttribute("data-sub");
+    caption();
     thumbs.forEach(function (x) { x.classList.remove("is-active"); });
     t.classList.add("is-active");
   };
+  document.addEventListener("site-lang", caption);
   thumbs.forEach(function (t, i) {
     t.addEventListener("mouseenter", function () { show(i); });
     t.addEventListener("click", function () { show(i); });
@@ -265,18 +296,27 @@
     var nom = form.nom.value.trim();
     var tel = form.tel.value.trim();
     var date = form.date.value;
+    var isAr = document.documentElement.lang === "ar";
     if (!nom || !tel || !date) {
-      note.textContent = "Veuillez remplir le nom, le téléphone et la date.";
+      note.textContent = isAr ? "يرجى ملء الاسم والهاتف والتاريخ." : "Veuillez remplir le nom, le téléphone et la date.";
       note.classList.add("error");
       return;
     }
     note.classList.remove("error");
-    note.textContent = "Merci " + nom + " ! Votre demande pour le " + date + " a bien été reçue. Nous vous appellerons au " + tel + " pour confirmer.";
+    note.textContent = isAr
+      ? "شكرًا " + nom + " ! تم استلام طلبك ليوم " + date + ". سنتصل بك على " + tel + " للتأكيد."
+      : "Merci " + nom + " ! Votre demande pour le " + date + " a bien été reçue. Nous vous appellerons au " + tel + " pour confirmer.";
     form.reset();
   });
 })();
 
-// FR / AR language dropdown (globe + menu, data-fr / data-ar attributes)
+// FR / AR language dropdown (globe + menu)
+// Swaps innerHTML ([data-fr]/[data-ar]), placeholders ([data-ph-fr]/[data-ph-ar]),
+// aria-labels ([data-aria-fr]/[data-aria-ar]) and the page title.
+var SITE_TITLES = {
+  fr: "Pacific Dental Clinic Dr Bedjaoui | Dentiste à Saïd Hamdine, Alger",
+  ar: "عيادة Pacific Dental للدكتور بجاوي | طبيب أسنان في سعيد حمدين، الجزائر"
+};
 (function () {
   var dropdown = document.getElementById("langDropdown");
   var btn = document.getElementById("langSwitch");
@@ -286,15 +326,24 @@
   var lang = "fr";
   var setLang = function (next) {
     lang = next;
-    document.documentElement.lang = lang === "ar" ? "ar" : "fr";
-    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-    if (current) current.textContent = lang === "ar" ? "AR" : "FR";
+    var isAr = lang === "ar";
+    document.documentElement.lang = isAr ? "ar" : "fr";
+    document.documentElement.dir = isAr ? "rtl" : "ltr";
+    if (current) current.textContent = isAr ? "AR" : "FR";
+    document.title = isAr ? SITE_TITLES.ar : SITE_TITLES.fr;
     menu.querySelectorAll("[data-lang]").forEach(function (opt) {
       opt.classList.toggle("is-active", opt.getAttribute("data-lang") === lang);
     });
     document.querySelectorAll("[data-fr]").forEach(function (el) {
-      el.innerHTML = lang === "ar" ? el.getAttribute("data-ar") : el.getAttribute("data-fr");
+      el.innerHTML = isAr ? el.getAttribute("data-ar") : el.getAttribute("data-fr");
     });
+    document.querySelectorAll("[data-ph-fr]").forEach(function (el) {
+      el.setAttribute("placeholder", isAr ? el.getAttribute("data-ph-ar") : el.getAttribute("data-ph-fr"));
+    });
+    document.querySelectorAll("[data-aria-fr]").forEach(function (el) {
+      el.setAttribute("aria-label", isAr ? el.getAttribute("data-aria-ar") : el.getAttribute("data-aria-fr"));
+    });
+    document.dispatchEvent(new CustomEvent("site-lang", { detail: { lang: lang } }));
   };
   var close = function () {
     dropdown.classList.remove("open");

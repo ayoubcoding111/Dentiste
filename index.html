@@ -10,7 +10,7 @@
       name="description"
       content="Pacific Dental Clinic Dr Bedjaoui à Saïd Hamdine, Alger. Soins dentaires modernes, doux et professionnels. Facettes, Invisalign, implants. Prenez rendez-vous en ligne."
     />
-    <link rel="stylesheet" href="style.css?v=13" />
+    <link rel="stylesheet" href="style.css?v=23" />
   </head>
   <body>
     <!-- Task 2.1: Header / Navigation Bar -->
@@ -48,7 +48,7 @@
             >
           </li>
           <li>
-            <a href="#rdv" data-fr="Contact" data-ar="اتصل بنا">Contact</a>
+            <a href="#rdvForm" data-fr="Contact" data-ar="اتصل بنا">Contact</a>
           </li>
         </ul>
 
@@ -108,7 +108,7 @@
             </ul>
           </div>
           <a
-            href="#rdv"
+            href="#rdvForm"
             class="btn btn-primary"
             data-fr="Prendre RDV"
             data-ar="احجز موعد"
@@ -159,7 +159,7 @@
           </p>
           <div class="hero-cta hero-cta--desktop">
             <a
-              href="#rdv"
+              href="#rdvForm"
               class="btn btn-primary btn-hero"
               data-fr="Prendre RDV"
               data-ar="احجز موعد"
@@ -182,8 +182,18 @@
             fetchpriority="high"
           />
           <div class="hero-cta hero-cta--overlay">
-            <a href="#rdv" class="btn btn-primary btn-hero">Prendre RDV</a>
-            <a href="#traitements" class="btn btn-secondary btn-hero"
+            <a
+              href="#rdvForm"
+              class="btn btn-primary btn-hero"
+              data-fr="Prendre RDV"
+              data-ar="احجز موعد"
+              >Prendre RDV</a
+            >
+            <a
+              href="#traitements"
+              class="btn btn-secondary btn-hero"
+              data-fr="Nos traitements"
+              data-ar="علاجاتنا"
               >Nos traitements</a
             >
           </div>
@@ -215,16 +225,16 @@
               </svg>
               <span class="stars" aria-hidden="true">★★★★★</span>
             </span>
-            <span>Sur Google · 40+ avis</span>
+            <span data-fr="Sur Google · 40+ avis" data-ar="على Google · أكثر من 40 تقييم">Sur Google · 40+ avis</span>
           </div>
           <div class="trust-item">
-            <span>+10 ans d'expérience</span>
+            <span data-fr="+10 ans d'expérience" data-ar="+10 سنوات من الخبرة">+10 ans d'expérience</span>
           </div>
           <div class="trust-item">
-            <span>Paiement par facilité</span>
+            <span data-fr="Paiement par facilité" data-ar="الدفع بالتقسيط">Paiement par facilité</span>
           </div>
           <div class="trust-item">
-            <span>N°1 dentiste à Saïd Hamdine</span>
+            <span data-fr="N°1 dentiste à Saïd Hamdine" data-ar="طبيب الأسنان رقم 1 في سعيد حمدين">N°1 dentiste à Saïd Hamdine</span>
           </div>
         </div>
       </div>
@@ -233,9 +243,9 @@
       <section class="section" id="traitements">
         <div class="container section-head">
           <div>
-            <p class="section-kicker">Nos traitements</p>
-            <h2 class="section-title">Des soins adaptés à chaque sourire</h2>
-            <p class="section-desc">
+            <p class="section-kicker" data-fr="Nos traitements" data-ar="علاجاتنا">Nos traitements</p>
+            <h2 class="section-title" data-fr="Des soins adaptés à chaque sourire" data-ar="رعاية تناسب كل ابتسامة">Des soins adaptés à chaque sourire</h2>
+            <p class="section-desc" data-fr="Faites défiler pour découvrir nos soins phares. Cliquez sur la flèche pour réserver." data-ar="مرّر لاكتشاف أبرز علاجاتنا. انقر على السهم للحجز.">
               Faites défiler pour découvrir nos soins phares. Cliquez sur la
               flèche pour réserver.
             </p>
@@ -247,6 +257,8 @@
             class="treat-arrow treat-arrow--side treat-arrow--prev"
             id="treatPrev"
             aria-label="Voir les traitements précédents"
+            data-aria-fr="Voir les traitements précédents"
+            data-aria-ar="عرض العلاجات السابقة"
           >
             ←
           </button>
@@ -271,13 +283,13 @@
                 />
               </div>
               <div class="treat-body">
-                <h3>Facette Dentaire</h3>
-                <p>
+                <h3 data-fr="Facette Dentaire" data-ar="قشرة الأسنان">Facette Dentaire</h3>
+                <p data-fr="Corrigez couleur, forme et alignement pour un sourire éclatant et naturel." data-ar="صحّح اللون والشكل والاصطفاف لابتسامة مشرقة وطبيعية.">
                   Corrigez couleur, forme et alignement pour un sourire éclatant
                   et naturel.
                 </p>
                 <a
-                  href="#rdv"
+                  href="#rdvForm"
                   class="treat-btn"
                   aria-label="Réserver pour Facette Dentaire"
                   >→</a
@@ -293,13 +305,13 @@
                 />
               </div>
               <div class="treat-body">
-                <h3>Invisalign</h3>
-                <p>
+                <h3 data-fr="Invisalign" data-ar="إنفيزالاين">Invisalign</h3>
+                <p data-fr="Aligneurs invisibles pour redresser vos dents en toute discrétion." data-ar="مصففات شفافة لتقويم أسنانك بسرية تامة.">
                   Aligneurs invisibles pour redresser vos dents en toute
                   discrétion.
                 </p>
                 <a
-                  href="#rdv"
+                  href="#rdvForm"
                   class="treat-btn"
                   aria-label="Réserver pour Invisalign"
                   >→</a
@@ -315,13 +327,13 @@
                 />
               </div>
               <div class="treat-body">
-                <h3>Couronne sur Implant</h3>
-                <p>
+                <h3 data-fr="Couronne sur Implant" data-ar="تاج على زرعة">Couronne sur Implant</h3>
+                <p data-fr="Restaurez une dent abîmée avec une couronne solide et esthétique." data-ar="رمّم السن المتضرر بتاج متين وجميل.">
                   Restaurez une dent abîmée avec une couronne solide et
                   esthétique.
                 </p>
                 <a
-                  href="#rdv"
+                  href="#rdvForm"
                   class="treat-btn"
                   aria-label="Réserver pour Couronne sur Implant"
                   >→</a
@@ -337,13 +349,13 @@
                 />
               </div>
               <div class="treat-body">
-                <h3>L'Implantation Dentaire</h3>
-                <p>
+                <h3 data-fr="L'Implantation Dentaire" data-ar="زراعة الأسنان">L'Implantation Dentaire</h3>
+                <p data-fr="Remplacez durablement les dents manquantes par des implants stables." data-ar="عوّض الأسنان المفقودة بزرعات ثابتة تدوم طويلاً.">
                   Remplacez durablement les dents manquantes par des implants
                   stables.
                 </p>
                 <a
-                  href="#rdv"
+                  href="#rdvForm"
                   class="treat-btn"
                   aria-label="Réserver pour Implantation Dentaire"
                   >→</a
@@ -356,6 +368,8 @@
             class="treat-arrow treat-arrow--side treat-arrow--next"
             id="treatNext"
             aria-label="Voir les traitements suivants"
+            data-aria-fr="Voir les traitements suivants"
+            data-aria-ar="عرض العلاجات التالية"
           >
             →
           </button>
@@ -366,9 +380,9 @@
       <section class="section section-alt" id="resultats">
         <div class="container section-head">
           <div>
-            <p class="section-kicker">Résultats réels</p>
-            <h2 class="section-title">Avant / Après : des résultats visibles</h2>
-            <p class="section-desc">
+            <p class="section-kicker" data-fr="Résultats réels" data-ar="نتائج حقيقية">Résultats réels</p>
+            <h2 class="section-title" data-fr="Avant / Après : des résultats visibles" data-ar="قبل / بعد: نتائج واضحة">Avant / Après : des résultats visibles</h2>
+            <p class="section-desc" data-fr="Faites défiler pour découvrir nos cas. Faites glisser le curseur au centre pour comparer." data-ar="مرّر لاكتشاف حالاتنا. اسحب المؤشر في الوسط للمقارنة.">
               Faites défiler pour découvrir nos cas. Faites glisser le curseur
               au centre pour comparer.
             </p>
@@ -380,6 +394,8 @@
             class="treat-arrow treat-arrow--side treat-arrow--prev"
             id="baPrev"
             aria-label="Voir les résultats précédents"
+            data-aria-fr="Voir les résultats précédents"
+            data-aria-ar="عرض النتائج السابقة"
           >
             ←
           </button>
@@ -404,8 +420,8 @@
                   loading="lazy"
                 />
               </div>
-              <span class="ba-label ba-label--before">Avant</span>
-              <span class="ba-label ba-label--after">Après</span>
+              <span class="ba-label ba-label--before" data-fr="Avant" data-ar="قبل">Avant</span>
+              <span class="ba-label ba-label--after" data-fr="Après" data-ar="بعد">Après</span>
               <div class="ba-handle" data-ba-handle>
                 <span class="ba-knob">⇔</span>
               </div>
@@ -434,8 +450,8 @@
                   loading="lazy"
                 />
               </div>
-              <span class="ba-label ba-label--before">Avant</span>
-              <span class="ba-label ba-label--after">Après</span>
+              <span class="ba-label ba-label--before" data-fr="Avant" data-ar="قبل">Avant</span>
+              <span class="ba-label ba-label--after" data-fr="Après" data-ar="بعد">Après</span>
               <div class="ba-handle" data-ba-handle>
                 <span class="ba-knob">⇔</span>
               </div>
@@ -464,8 +480,8 @@
                   loading="lazy"
                 />
               </div>
-              <span class="ba-label ba-label--before">Avant</span>
-              <span class="ba-label ba-label--after">Après</span>
+              <span class="ba-label ba-label--before" data-fr="Avant" data-ar="قبل">Avant</span>
+              <span class="ba-label ba-label--after" data-fr="Après" data-ar="بعد">Après</span>
               <div class="ba-handle" data-ba-handle>
                 <span class="ba-knob">⇔</span>
               </div>
@@ -485,6 +501,8 @@
             class="treat-arrow treat-arrow--side treat-arrow--next"
             id="baNext"
             aria-label="Voir les résultats suivants"
+            data-aria-fr="Voir les résultats suivants"
+            data-aria-ar="عرض النتائج التالية"
           >
             →
           </button>
@@ -494,9 +512,9 @@
       <!-- Task 5.1: Testimonials -->
       <section class="section" id="temoignages">
         <div class="container">
-          <p class="section-kicker">Témoignages</p>
-          <h2 class="section-title">Ce que disent nos patients</h2>
-          <p class="section-desc">Note 5/5 basée sur plus de 40 avis Google.</p>
+          <p class="section-kicker" data-fr="Témoignages" data-ar="آراء المرضى">Témoignages</p>
+          <h2 class="section-title" data-fr="Ce que disent nos patients" data-ar="ماذا يقول مرضانا">Ce que disent nos patients</h2>
+          <p class="section-desc" data-fr="Note 5/5 basée sur plus de 40 avis Google." data-ar="تقييم 5/5 بناءً على أكثر من 40 رأيًا على Google.">Note 5/5 basée sur plus de 40 avis Google.</p>
         </div>
         <div
           class="reviews-marquee reviews-marquee--ltr"
@@ -504,7 +522,7 @@
         >
           <div class="reviews-track" data-reviews-track>
             <article class="review-card">
-              <p class="review-text">
+              <p class="review-text" data-fr="« Accueil très chaleureux et soins totalement sans douleur. Le Dr Bedjaoui explique tout avec patience. Je recommande les yeux fermés. »" data-ar="«استقبال حار ورعاية دون أي ألم. الدكتور بجاوي يشرح كل شيء بصبر. أنصح به دون تردد.»">
                 « Accueil très chaleureux et soins totalement sans douleur. Le
                 Dr Bedjaoui explique tout avec patience. Je recommande les yeux
                 fermés. »
@@ -536,7 +554,7 @@
               </div>
             </article>
             <article class="review-card">
-              <p class="review-text">
+              <p class="review-text" data-fr="« Matériel moderne et hygiène impeccable. Ma facette est parfaite, résultat très naturel. Merci à toute l'équipe ! »" data-ar="«معدات حديثة ونظافة مثالية. القشرة مثالية ونتيجة طبيعية جدًا. شكرًا لكامل الفريق!»">
                 « Matériel moderne et hygiène impeccable. Ma facette est
                 parfaite, résultat très naturel. Merci à toute l'équipe ! »
               </p>
@@ -567,7 +585,7 @@
               </div>
             </article>
             <article class="review-card">
-              <p class="review-text">
+              <p class="review-text" data-fr="« J'avais peur du dentiste depuis des années. Ici, tout est doux et rassurant. Mon implant s'est fait sans aucune douleur. »" data-ar="«كنت أخاف من طبيب الأسنان منذ سنوات. هنا كل شيء لطيف ومطمئن. تمت زراعتي دون أي ألم.»">
                 « J'avais peur du dentiste depuis des années. Ici, tout est doux
                 et rassurant. Mon implant s'est fait sans aucune douleur. »
               </p>
@@ -605,7 +623,7 @@
         >
           <div class="reviews-track" data-reviews-track>
             <article class="review-card">
-              <p class="review-text">
+              <p class="review-text" data-fr="« Prise de rendez-vous rapide et ponctualité respectée. Détartrage efficace et conseils clairs pour l'entretien. »" data-ar="«حجز سريع والتزام بالمواعيد. تنظيف فعال للأسنان ونصائح واضحة للعناية بها.»">
                 « Prise de rendez-vous rapide et ponctualité respectée.
                 Détartrage efficace et conseils clairs pour l'entretien. »
               </p>
@@ -636,7 +654,7 @@
               </div>
             </article>
             <article class="review-card">
-              <p class="review-text">
+              <p class="review-text" data-fr="« Clinique très propre et lumineuse. Mes enfants n'ont plus peur d'aller chez le dentiste. Merci pour votre patience ! »" data-ar="«عيادة نظيفة ومشرقة جدًا. أطفالي لم يعودوا يخافون من طبيب الأسنان. شكرًا لصبركم!»">
                 « Clinique très propre et lumineuse. Mes enfants n'ont plus peur
                 d'aller chez le dentiste. Merci pour votre patience ! »
               </p>
@@ -667,7 +685,7 @@
               </div>
             </article>
             <article class="review-card">
-              <p class="review-text">
+              <p class="review-text" data-fr="« Excellent suivi après la pose de ma couronne. Paiement par facilité très arrangeant. Travail sérieux et professionnel. »" data-ar="«متابعة ممتازة بعد تركيب التاج. الدفع بالتقسيط مريح جدًا. عمل جاد واحترافي.»">
                 « Excellent suivi après la pose de ma couronne. Paiement par
                 facilité très arrangeant. Travail sérieux et professionnel. »
               </p>
@@ -704,9 +722,9 @@
       <!-- Task 5.2: Clinic Gallery -->
       <section class="section section-alt" id="clinique">
         <div class="container">
-          <p class="section-kicker">Notre clinique</p>
-          <h2 class="section-title">Découvrez nos espaces</h2>
-          <p class="section-desc">
+          <p class="section-kicker" data-fr="Notre clinique" data-ar="عيادتنا">Notre clinique</p>
+          <h2 class="section-title" data-fr="Découvrez nos espaces" data-ar="اكتشف فضاءاتنا">Découvrez nos espaces</h2>
+          <p class="section-desc" data-fr="Survolez l'image principale pour faire défiler, ou cliquez sur une vignette." data-ar="مرّر فوق الصورة الرئيسية للتنقل، أو انقر على صورة مصغرة.">
             Survolez l'image principale pour faire défiler, ou cliquez sur une
             vignette.
           </p>
@@ -730,70 +748,80 @@
                 class="gallery-thumb is-active"
                 data-src="imgs%20clinique/%7B45D72C74-0B48-48F0-B2A2-9CBEFDD9FAF6%7D.png"
                 data-title="Salle de soin moderne"
+                data-title-ar="قاعة علاج حديثة"
                 data-sub="Équipements de dernière génération"
+                data-sub-ar="معدات من أحدث جيل"
                 role="listitem"
               >
                 <img
                   src="imgs%20clinique/%7B45D72C74-0B48-48F0-B2A2-9CBEFDD9FAF6%7D.png"
                   alt="Salle de soin"
                   loading="lazy"
-                /><span class="thumb-shade">Salle de soin</span>
+                /><span class="thumb-shade" data-fr="Salle de soin" data-ar="قاعة العلاج">Salle de soin</span>
               </button>
               <button
                 type="button"
                 class="gallery-thumb"
                 data-src="imgs%20clinique/%7B696A136D-D1EC-4E5A-8376-C378B6F7B03D%7D.png"
                 data-title="Accueil lumineux"
+                data-title-ar="استقبال مشرق"
                 data-sub="Un espace apaisant dès l'entrée"
+                data-sub-ar="فضاء مريح منذ المدخل"
                 role="listitem"
               >
                 <img
                   src="imgs%20clinique/%7B696A136D-D1EC-4E5A-8376-C378B6F7B03D%7D.png"
                   alt="Accueil de la clinique"
                   loading="lazy"
-                /><span class="thumb-shade">Accueil</span>
+                /><span class="thumb-shade" data-fr="Accueil" data-ar="الاستقبال">Accueil</span>
               </button>
               <button
                 type="button"
                 class="gallery-thumb"
                 data-src="imgs%20clinique/%7BCA812A7E-CEB3-4510-A912-B9FE47440C36%7D.png"
                 data-title="Fauteuil ergonomique"
+                data-title-ar="كرسي مريح"
                 data-sub="Confort optimal pendant les soins"
+                data-sub-ar="راحة مثالية أثناء العلاج"
                 role="listitem"
               >
                 <img
                   src="imgs%20clinique/%7BCA812A7E-CEB3-4510-A912-B9FE47440C36%7D.png"
                   alt="Fauteuil dentaire"
                   loading="lazy"
-                /><span class="thumb-shade">Fauteuil</span>
+                /><span class="thumb-shade" data-fr="Fauteuil" data-ar="الكرسي">Fauteuil</span>
               </button>
               <button
                 type="button"
                 class="gallery-thumb"
                 data-src="imgs%20clinique/%7BD4026D17-A5E6-4282-BD3C-0A5B9D0FF636%7D.png"
                 data-title="Bloc stérilisation"
+                data-title-ar="وحدة التعقيم"
                 data-sub="Hygiène irréprochable garantie"
+                data-sub-ar="نظافة مضمونة لا تشوبها شائبة"
                 role="listitem"
               >
                 <img
                   src="imgs%20clinique/%7BD4026D17-A5E6-4282-BD3C-0A5B9D0FF636%7D.png"
                   alt="Équipement de stérilisation"
                   loading="lazy"
-                /><span class="thumb-shade">Hygiène</span>
+                /><span class="thumb-shade" data-fr="Hygiène" data-ar="النظافة">Hygiène</span>
               </button>
               <button
                 type="button"
                 class="gallery-thumb"
                 data-src="imgs%20clinique/%7BE2B95145-7EB6-46FE-BF14-0619F8FF0E79%7D.png"
                 data-title="Salle d'attente"
+                data-title-ar="قاعة الانتظار"
                 data-sub="Calme et confort pour toute la famille"
+                data-sub-ar="هدوء وراحة لجميع العائلة"
                 role="listitem"
               >
                 <img
                   src="imgs%20clinique/%7BE2B95145-7EB6-46FE-BF14-0619F8FF0E79%7D.png"
                   alt="Salle d'attente"
                   loading="lazy"
-                /><span class="thumb-shade">Attente</span>
+                /><span class="thumb-shade" data-fr="Attente" data-ar="الانتظار">Attente</span>
               </button>
             </div>
           </div>
@@ -803,16 +831,16 @@
       <!-- Task 6.1: Appointment / Booking -->
       <section class="booking" id="rdv" aria-labelledby="booking-title">
         <div class="booking-head">
-          <p class="section-kicker">Contact</p>
-          <h2 class="section-title">Contactez-Nous</h2>
-          <p class="section-desc">
+          <p class="section-kicker" data-fr="Contact" data-ar="اتصل بنا">Contact</p>
+          <h2 class="section-title" data-fr="Contactez-Nous" data-ar="اتصلوا بنا">Contactez-Nous</h2>
+          <p class="section-desc" data-fr="Nous sommes là pour répondre à toutes vos questions" data-ar="نحن هنا للإجابة على جميع أسئلتكم">
             Nous sommes là pour répondre à toutes vos questions
           </p>
         </div>
         <div class="booking-grid">
           <div class="booking-card">
-            <h2 id="booking-title">Réservez votre rendez-vous</h2>
-            <p class="card-lead">
+            <h2 id="booking-title" data-fr="Réservez votre rendez-vous" data-ar="احجز موعدك">Réservez votre rendez-vous</h2>
+            <p class="card-lead" data-fr="Remplissez le formulaire et nous vous rappellerons rapidement pour confirmer votre rendez-vous. Sans aucun engagement." data-ar="املأ الاستمارة وسنتصل بك سريعًا لتأكيد موعدك. دون أي التزام.">
               Remplissez le formulaire et nous vous rappellerons rapidement
               pour confirmer votre rendez-vous. Sans aucun engagement.
             </p>
@@ -834,7 +862,7 @@
                 </svg>
               </span>
               <div class="info-text">
-                <strong>Notre adresse</strong>
+                <strong data-fr="Notre adresse" data-ar="عنواننا">Notre adresse</strong>
                 <p>Cité Saïd Hamdine, Les Logts 384, Bt 02 N°03, Alger</p>
               </div>
             </div>
@@ -857,8 +885,8 @@
                 </svg>
               </span>
               <div class="info-text">
-                <strong>Téléphone</strong>
-                <p>0559 05 38 79</p>
+                <strong data-fr="Téléphone" data-ar="الهاتف">Téléphone</strong>
+                <p><a href="tel:+213559053879">0559 05 38 79</a></p>
               </div>
             </div>
 
@@ -879,8 +907,8 @@
                 </svg>
               </span>
               <div class="info-text">
-                <strong>Horaires</strong>
-                <p>
+                <strong data-fr="Horaires" data-ar="أوقات العمل">Horaires</strong>
+                <p data-fr="Samedi – Jeudi : 9h00 – 17h00<br />Vendredi : fermé" data-ar="السبت – الخميس: 9:00 – 17:00<br />الجمعة: مغلق">
                   Samedi – Jeudi : 9h00 – 17h00<br />
                   Vendredi : fermé
                 </p>
@@ -891,18 +919,20 @@
           <form class="booking-form" id="rdvForm" novalidate>
             <div class="form-row">
               <div class="field-name">
-                <label class="sr-only" for="nom">Nom complet *</label>
+                <label class="sr-only" for="nom" data-fr="Nom complet *" data-ar="الاسم الكامل *">Nom complet *</label>
                 <input
                   type="text"
                   id="nom"
                   name="nom"
                   placeholder="Nom complet *"
+                  data-ph-fr="Nom complet *"
+                  data-ph-ar="الاسم الكامل *"
                   autocomplete="name"
                   required
                 />
               </div>
               <div class="phone-group">
-                <label class="sr-only" for="cc">Indicatif pays</label>
+                <label class="sr-only" for="cc" data-fr="Indicatif pays" data-ar="رمز البلد">Indicatif pays</label>
                 <span class="cc-select">
                   <select id="cc" name="indicatif">
                     <option value="+93" data-short="AF">+93 Afghanistan</option>
@@ -1152,12 +1182,14 @@
                 </span>
                 <span class="phone-divider" aria-hidden="true"></span>
                 <span class="phone-prefix" id="phonePrefix">+213</span>
-                <label class="sr-only" for="tel">Téléphone *</label>
+                <label class="sr-only" for="tel" data-fr="Téléphone *" data-ar="الهاتف *">Téléphone *</label>
                 <input
                   type="tel"
                   id="tel"
                   name="tel"
                   placeholder="Téléphone *"
+                  data-ph-fr="Téléphone *"
+                  data-ph-ar="الهاتف *"
                   autocomplete="tel"
                   inputmode="numeric"
                   required
@@ -1166,21 +1198,23 @@
             </div>
 
             <div class="date-wrap">
-              <label class="sr-only" for="date">La date souhaitée</label>
+              <label class="sr-only" for="date" data-fr="La date souhaitée" data-ar="التاريخ المطلوب">La date souhaitée</label>
               <input
                 type="date"
                 id="date"
                 name="date"
                 aria-label="La date souhaitée"
+                data-aria-fr="La date souhaitée"
+                data-aria-ar="التاريخ المطلوب"
                 required
               />
-              <span class="date-placeholder" aria-hidden="true"
+              <span class="date-placeholder" aria-hidden="true" data-fr="La date souhaitée" data-ar="التاريخ المطلوب"
                 >La date souhaitée</span
               >
             </div>
 
             <div>
-              <label class="sr-only" for="message"
+              <label class="sr-only" for="message" data-fr="Votre message (optionnel)" data-ar="رسالتك (اختياري)"
                 >Votre message (optionnel)</label
               >
               <textarea
@@ -1188,10 +1222,12 @@
                 name="message"
                 rows="6"
                 placeholder="Votre message (optionnel)"
+                data-ph-fr="Votre message (optionnel)"
+                data-ph-ar="رسالتك (اختياري)"
               ></textarea>
             </div>
 
-            <button type="submit" class="btn-submit">
+            <button type="submit" class="btn-submit" data-fr="Réserver mon rendez-vous" data-ar="احجز موعدي">
               Réserver mon rendez-vous
             </button>
             <p
@@ -1208,8 +1244,8 @@
       <section class="section section-alt" id="contact">
         <div class="container">
           <div class="contact-head">
-            <p class="section-kicker">Où nous trouver</p>
-            <h2 class="section-title">La clinique sur la carte</h2>
+            <p class="section-kicker" data-fr="Où nous trouver" data-ar="أين تجدنا">Où nous trouver</p>
+            <h2 class="section-title" data-fr="La clinique sur la carte" data-ar="العيادة على الخريطة">La clinique sur la carte</h2>
             <p class="section-desc">
               Cité Saïd Hamdine, Les Logts 384, Bt 02 N°03, Alger.
             </p>
@@ -1239,31 +1275,31 @@
               height="28"
             /><span>Pacific Dental <strong>Dr Bedjaoui</strong></span>
           </div>
-          <p>
+          <p data-fr="Clinique dentaire moderne à Saïd Hamdine, Alger. Soins doux, hygiène irréprochable et sourire éclatant pour toute la famille." data-ar="عيادة أسنان حديثة في سعيد حمدين، الجزائر. رعاية لطيفة ونظافة مثالية وابتسامة مشرقة لجميع العائلة.">
             Clinique dentaire moderne à Saïd Hamdine, Alger. Soins doux, hygiène
             irréprochable et sourire éclatant pour toute la famille.
           </p>
         </div>
         <div class="footer-col">
-          <h3>Liens rapides</h3>
+          <h3 data-fr="Liens rapides" data-ar="روابط سريعة">Liens rapides</h3>
           <ul>
-            <li><a href="#accueil">Accueil</a></li>
-            <li><a href="#traitements">Nos traitements</a></li>
-            <li><a href="#temoignages">Témoignages</a></li>
-            <li><a href="#rdv">Prendre RDV</a></li>
+            <li><a href="#accueil" data-fr="Accueil" data-ar="الرئيسية">Accueil</a></li>
+            <li><a href="#traitements" data-fr="Nos traitements" data-ar="علاجاتنا">Nos traitements</a></li>
+            <li><a href="#temoignages" data-fr="Témoignages" data-ar="آراء المرضى">Témoignages</a></li>
+            <li><a href="#rdvForm" data-fr="Prendre RDV" data-ar="احجز موعد">Prendre RDV</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h3>Nos traitements</h3>
+          <h3 data-fr="Nos traitements" data-ar="علاجاتنا">Nos traitements</h3>
           <ul>
-            <li><a href="#traitements">Facette Dentaire</a></li>
-            <li><a href="#traitements">Invisalign</a></li>
-            <li><a href="#traitements">Couronne sur Implant</a></li>
-            <li><a href="#traitements">Implantation Dentaire</a></li>
+            <li><a href="#traitements" data-fr="Facette Dentaire" data-ar="قشرة الأسنان">Facette Dentaire</a></li>
+            <li><a href="#traitements" data-fr="Invisalign" data-ar="إنفيزالاين">Invisalign</a></li>
+            <li><a href="#traitements" data-fr="Couronne sur Implant" data-ar="تاج على زرعة">Couronne sur Implant</a></li>
+            <li><a href="#traitements" data-fr="Implantation Dentaire" data-ar="زراعة الأسنان">Implantation Dentaire</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h3>Contact</h3>
+          <h3 data-fr="Contact" data-ar="اتصل بنا">Contact</h3>
           <ul class="footer-contact">
             <li>
               <svg
@@ -1315,25 +1351,25 @@
                 <circle cx="12" cy="12" r="10" />
                 <polyline points="12 6 12 12 16 14" />
               </svg>
-              <span>Sam – Jeu : 9h00 – 17h00 · Ven : fermé</span>
+              <span data-fr="Sam – Jeu : 9h00 – 17h00 · Ven : fermé" data-ar="السبت – الخميس: 9:00 – 17:00 · الجمعة: مغلق">Sam – Jeu : 9h00 – 17h00 · Ven : fermé</span>
             </li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <div class="container footer-bottom-inner">
-          <span
+          <span data-fr="© 2026 Pacific Dental Clinic Dr Bedjaoui. Tous droits réservés." data-ar="© 2026 عيادة Pacific Dental للدكتور بجاوي. جميع الحقوق محفوظة."
             >© 2026 Pacific Dental Clinic Dr Bedjaoui. Tous droits
             réservés.</span
           >
           <span
-            ><a href="#">Politique de confidentialité</a> ·
-            <a href="#">Conditions générales</a></span
+            ><a href="#" data-fr="Politique de confidentialité" data-ar="سياسة الخصوصية">Politique de confidentialité</a> ·
+            <a href="#" data-fr="Conditions générales" data-ar="الشروط العامة">Conditions générales</a></span
           >
         </div>
       </div>
     </footer>
 
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=6"></script>
   </body>
 </html>
