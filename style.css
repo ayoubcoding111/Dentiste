@@ -280,7 +280,7 @@ html {
 }
 
 .hero-text {
-  padding: 60px 48px 60px max(20px, calc((100vw - 1200px) / 2 + 20px));
+  padding: 60px 48px 60px max(32px, calc((100vw - 1400px) / 2 + 32px));
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1670,6 +1670,13 @@ html[dir="rtl"] .review-foot {
 html[dir="rtl"] .hero-img {
   transform: scaleX(1);
 }
+/* RTL desktop: mirror hero padding so text aligns with nav logo on the right */
+@media (min-width: 861px) {
+  html[dir="rtl"] .hero-text {
+    padding-left: 48px;
+    padding-right: max(32px, calc((100vw - 1400px) / 2 + 32px));
+  }
+}
 /* Keep carousel/marquee mechanics LTR so scroll + infinite loops work in Arabic */
 html[dir="rtl"] .treat-card,
 html[dir="rtl"] .ba-slider {
@@ -1840,6 +1847,7 @@ html[dir="rtl"] .section {
   .booking-form textarea {
     padding: 16px 14px;
   }
+}
 @media (prefers-reduced-motion: reduce) {
   .trust-track {
     animation: none;
@@ -1853,5 +1861,200 @@ html[dir="rtl"] .section {
   }
   html {
     scroll-behavior: auto;
+  }
+}
+
+/* ===== Ultra-wide screens: navbar + hero image + map =====
+   - Nav: full-width bar, items stretch with the screen (no centered cap).
+   - Hero: full-bleed, text anchored to the LEFT edge, image fills the right.
+   - Map: wider container + taller iframe. Everything else untouched. */
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1400px;
+  }
+  /* Nav stretches edge-to-edge: logo left, links spread center, actions right */
+  .nav {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding-left: 48px;
+    padding-right: 48px;
+    gap: 48px;
+  }
+  .nav-links {
+    flex: 1 1 auto;
+    justify-content: center;
+    gap: clamp(48px, 4vw, 90px);
+  }
+  .nav-links a {
+    font-size: 1.05rem;
+  }
+  /* Hero: no centering cap — full viewport width */
+  .hero {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    min-height: 700px;
+  }
+  /* Text pinned to the left edge, content width capped so lines stay readable */
+  .hero-text {
+    padding: 70px 56px 70px 48px;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .hero-text h1,
+  .hero-sub,
+  .hero-intro {
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  .hero-text h1 {
+    font-size: clamp(2.4rem, 3vw, 3.8rem);
+    max-width: 18ch;
+  }
+  .hero-intro {
+    font-size: 1.12rem;
+    max-width: 36rem;
+  }
+  .hero-media {
+    min-height: 700px;
+  }
+  .hero-img {
+    /* Keep the subject framed when the column gets very wide */
+    object-position: 50% 20%;
+  }
+  #contact .container {
+    max-width: 1400px;
+  }
+  .map-wrap iframe {
+    height: 440px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .container {
+    max-width: 1600px;
+  }
+  .nav {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    min-height: 84px;
+    padding-left: 64px;
+    padding-right: 64px;
+    gap: 56px;
+  }
+  .nav-links {
+    flex: 1 1 auto;
+    justify-content: center;
+    gap: clamp(56px, 4vw, 110px);
+  }
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+  .nav-logo-img {
+    width: 44px;
+    height: 38px;
+  }
+  .nav-links a {
+    font-size: 1.12rem;
+  }
+  .nav-actions .btn-primary,
+  .btn-primary {
+    padding: 14px 28px;
+    font-size: 1.02rem;
+  }
+  #accueil {
+    padding-top: 132px;
+  }
+  .hero {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    min-height: 800px;
+  }
+  .hero-text {
+    padding: 80px 64px 80px 64px;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .hero-text h1,
+  .hero-sub,
+  .hero-intro {
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  .hero-text h1 {
+    font-size: clamp(2.6rem, 2.8vw, 4.3rem);
+  }
+  .hero-sub {
+    font-size: 1.4rem;
+  }
+  .hero-intro {
+    font-size: 1.18rem;
+  }
+  .hero-media {
+    min-height: 800px;
+  }
+  #contact .container {
+    max-width: 1600px;
+  }
+  .map-wrap {
+    border-radius: 24px;
+  }
+  .map-wrap iframe {
+    height: 500px;
+  }
+}
+
+/* "High high high" widths: 2560px, 3440px super-ultrawide and up.
+   Nav keeps stretching; hero stays full-bleed with text pinned left. */
+@media (min-width: 2560px) {
+  .container,
+  #contact .container {
+    max-width: 1720px;
+  }
+  .nav {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    min-height: 88px;
+    padding-left: 80px;
+    padding-right: 80px;
+    gap: 64px;
+  }
+  .nav-links {
+    flex: 1 1 auto;
+    justify-content: center;
+    gap: clamp(64px, 4vw, 140px);
+  }
+  .hero {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    min-height: 860px;
+  }
+  .hero-text {
+    padding: 80px 80px 80px 80px;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .hero-text h1,
+  .hero-sub,
+  .hero-intro {
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  .hero-text h1 {
+    font-size: 4.3rem;
+  }
+  .hero-media {
+    min-height: 860px;
+  }
+  .map-wrap iframe {
+    height: 540px;
   }
 }
