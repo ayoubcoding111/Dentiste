@@ -1331,8 +1331,11 @@ html {
 .booking-form input[type="date"],
 .booking-form textarea {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 16px; /* 16px min prevents iOS Safari auto-zoom which mimics overflow */
   color: var(--text);
   background: var(--white);
   border: none;
@@ -1366,27 +1369,55 @@ html {
 }
 .booking-form input[type="date"] {
   display: block;
+  width: 100%;
   min-width: 0;
   max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .booking-form input[type="date"]::-webkit-datetime-edit {
   min-width: 0;
+  max-width: 100%;
   overflow: hidden;
   white-space: nowrap;
+  padding: 0;
+}
+.booking-form input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0;
+}
+.booking-form input[type="date"]::-webkit-date-and-time-value {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
 }
 .booking-form input[type="date"]::-webkit-calendar-picker-indicator {
   flex-shrink: 0;
-  margin: 0;
+  margin: 0 0 0 8px;
+  padding: 0;
+  opacity: 0.7;
 }
 .booking-form .date-placeholder {
   position: absolute;
   left: 20px;
+  right: 48px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   color: #64748b;
   pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .booking-form input[type="date"]:required:invalid {
   color: transparent;
@@ -1432,7 +1463,7 @@ html {
   border: none;
   background: transparent;
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--text);
   padding: 18px 24px 18px 14px;
@@ -1458,7 +1489,7 @@ html {
 }
 .booking-form .phone-prefix {
   flex-shrink: 0;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text);
   margin-right: 6px;
 }
@@ -1730,6 +1761,36 @@ html[dir="rtl"] .section {
   }
   .booking-form .form-row {
     flex-direction: column;
+    min-width: 0;
+  }
+  .booking-form input[type="date"] {
+    padding: 16px 14px;
+  }
+  .booking-form .date-placeholder {
+    left: 14px;
+    right: 40px;
+  }
+}
+/* iOS Safari only: force date internals to stay inside the box */
+@supports (-webkit-touch-callout: none) {
+  .booking-form .date-wrap {
+    overflow: hidden;
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: 0 2px 12px rgba(16, 40, 75, 0.07);
+  }
+  .booking-form .date-wrap input[type="date"] {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .booking-form .date-wrap input[type="date"]:focus {
+    box-shadow: none;
+  }
+  .booking-form .date-wrap:focus-within {
+    box-shadow:
+      0 0 0 2px var(--primary),
+      0 2px 12px rgba(16, 40, 75, 0.07);
   }
 }
 @media (max-width: 600px) {
@@ -1770,7 +1831,15 @@ html[dir="rtl"] .section {
   .booking-card h2 {
     font-size: 24px;
   }
-}
+  .booking-form {
+    padding: 28px 16px;
+  }
+  .booking-form input[type="text"],
+  .booking-form input[type="tel"],
+  .booking-form input[type="date"],
+  .booking-form textarea {
+    padding: 16px 14px;
+  }
 @media (prefers-reduced-motion: reduce) {
   .trust-track {
     animation: none;
