@@ -4,6 +4,18 @@
   "graph": {},
   "nodes": [
     {
+      "id": "script_makeinfinitecarousel",
+      "label": "makeInfiniteCarousel()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "script.js",
+      "file_type": "code",
+      "norm_label": "makeinfinitecarousel()",
+      "source_file": "script.js",
+      "source_location": "L65"
+    },
+    {
       "id": "tasks",
       "label": "TASKS.md",
       "_origin": "ast",
@@ -149,6 +161,17 @@
   ],
   "links": [
     {
+      "source": "script",
+      "target": "script_makeinfinitecarousel",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "script.js",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
       "source": "tasks",
       "target": "tasks_pacific_dental_clinic_project_execution_plan",
       "relation": "contains",
@@ -238,5 +261,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "f6b1f81f746668e1ce2b38bd9bc2421563b15fa5"
+  "built_at_commit": "7a7c08f4b8d4adb3973502426f36ab912d76c17d"
 }

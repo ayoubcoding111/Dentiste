@@ -1,0 +1,242 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "tasks",
+      "label": "TASKS.md",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Pacific Dental Clinic - Project Execution Plan",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "tasks.md",
+      "source_file": "TASKS.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "tasks_pacific_dental_clinic_project_execution_plan",
+      "label": "Pacific Dental Clinic - Project Execution Plan",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Pacific Dental Clinic - Project Execution Plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "pacific dental clinic - project execution plan",
+      "source_file": "TASKS.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "tasks_phase_1_project_setup_foundation",
+      "label": "Phase 1: Project Setup & Foundation",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Pacific Dental Clinic - Project Execution Plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "phase 1: project setup & foundation",
+      "source_file": "TASKS.md",
+      "source_location": "L5"
+    },
+    {
+      "id": "tasks_phase_2_navigation_header",
+      "label": "Phase 2: Navigation & Header",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Pacific Dental Clinic - Project Execution Plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "phase 2: navigation & header",
+      "source_file": "TASKS.md",
+      "source_location": "L17"
+    },
+    {
+      "id": "tasks_phase_3_hero_trust_sections",
+      "label": "Phase 3: Hero & Trust Sections",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Pacific Dental Clinic - Project Execution Plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "phase 3: hero & trust sections",
+      "source_file": "TASKS.md",
+      "source_location": "L24"
+    },
+    {
+      "id": "tasks_phase_4_treatments_interactive_before_after_grid",
+      "label": "Phase 4: Treatments & Interactive Before/After Grid",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Pacific Dental Clinic - Project Execution Plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "phase 4: treatments & interactive before/after grid",
+      "source_file": "TASKS.md",
+      "source_location": "L36"
+    },
+    {
+      "id": "tasks_phase_5_testimonials_clinic_gallery",
+      "label": "Phase 5: Testimonials & Clinic Gallery",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Pacific Dental Clinic - Project Execution Plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "phase 5: testimonials & clinic gallery",
+      "source_file": "TASKS.md",
+      "source_location": "L48"
+    },
+    {
+      "id": "tasks_phase_6_contact_location_footer",
+      "label": "Phase 6: Contact, Location, & Footer",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Pacific Dental Clinic - Project Execution Plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "phase 6: contact, location, & footer",
+      "source_file": "TASKS.md",
+      "source_location": "L60"
+    },
+    {
+      "id": "prd",
+      "label": "PRD.md",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "PRD.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "prd.md",
+      "source_file": "PRD.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "trd",
+      "label": "TRD.md",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "PRD.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "trd.md",
+      "source_file": "TRD.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "script",
+      "label": "script.js",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "script.js",
+      "file_type": "code",
+      "norm_label": "script.js",
+      "source_file": "script.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "readme",
+      "label": "README.md",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "README.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "readme.md",
+      "source_file": "README.md",
+      "source_location": "L1"
+    }
+  ],
+  "links": [
+    {
+      "source": "tasks",
+      "target": "tasks_pacific_dental_clinic_project_execution_plan",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "TASKS.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "tasks_pacific_dental_clinic_project_execution_plan",
+      "target": "tasks_phase_2_navigation_header",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "TASKS.md",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "tasks_pacific_dental_clinic_project_execution_plan",
+      "target": "tasks_phase_3_hero_trust_sections",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "TASKS.md",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "tasks_pacific_dental_clinic_project_execution_plan",
+      "target": "tasks_phase_4_treatments_interactive_before_after_grid",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "TASKS.md",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "tasks_pacific_dental_clinic_project_execution_plan",
+      "target": "tasks_phase_5_testimonials_clinic_gallery",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "TASKS.md",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "tasks_pacific_dental_clinic_project_execution_plan",
+      "target": "tasks_phase_1_project_setup_foundation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "TASKS.md",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "tasks_pacific_dental_clinic_project_execution_plan",
+      "target": "tasks_phase_6_contact_location_footer",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "TASKS.md",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "trd",
+      "target": "prd",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "TRD.md",
+      "source_location": "L61",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "f6b1f81f746668e1ce2b38bd9bc2421563b15fa5"
+}

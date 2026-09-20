@@ -18,57 +18,15 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1789918156.3635907,
-    "seen": 1789918159.2400873,
-    "ast_hash": "19b6951be2143ac2e69126c3bb42a469",
-    "semantic_hash": ""
-  },
-  "imgs/Couronne sur Implant.png": {
-    "mtime": 1789840042.3080885,
-    "seen": 1789845276.7298148,
-    "ast_hash": "19e59da3eda850b847ce0e6145ad3048",
-    "semantic_hash": ""
-  },
-  "imgs/Firefly (3).png": {
-    "mtime": 1789839692.541148,
-    "seen": 1789845276.7298164,
-    "ast_hash": "afb19e7cf242993f16feb944220a8639",
-    "semantic_hash": ""
-  },
-  "imgs/Invisalign.png": {
-    "mtime": 1789840082.6242042,
-    "seen": 1789845276.7298193,
-    "ast_hash": "e833a6d1e7182829e3bfe500ad6949dd",
-    "semantic_hash": ""
-  },
-  "imgs/L'Implantation Dentaire.png": {
-    "mtime": 1789839632.4103808,
-    "seen": 1789845276.7298207,
-    "ast_hash": "37fbe4ac8cef17f8a535f8a0ff9fee50",
-    "semantic_hash": ""
-  },
-  "imgs/facettes.png": {
-    "mtime": 1789839844.9403944,
-    "seen": 1789845276.7298222,
-    "ast_hash": "dff926ec21070689d6756984d45176f5",
-    "semantic_hash": ""
-  },
-  "imgs/pexels-karola-g-6627599-removebg-preview.png": {
-    "mtime": 1789839852.8588722,
-    "seen": 1789845276.7298255,
-    "ast_hash": "d685eadd5f4f6724a361ba48b4e3b77b",
-    "semantic_hash": ""
-  },
-  "imgs/transparent.png": {
-    "mtime": 1789840124.8988307,
-    "seen": 1789845276.729827,
-    "ast_hash": "674712d4e2477d6815445fb12865ac02",
+    "mtime": 1789919029.819181,
+    "seen": 1789919032.7549708,
+    "ast_hash": "883d0fb39210e83f84c1449b4e6fdbaf",
     "semantic_hash": ""
   },
   "script.js": {
-    "mtime": 1789912571.8489244,
-    "seen": 1789912574.7916539,
-    "ast_hash": "136f25eca3b767dfc567905fc219ff2f",
+    "mtime": 1789919018.037924,
+    "seen": 1789919021.055322,
+    "ast_hash": "eb2801cc0e7abc7947f84b345bafb874",
     "semantic_hash": ""
   },
   "imgs clinique/{CA812A7E-CEB3-4510-A912-B9FE47440C36}.png": {
@@ -107,12 +65,6 @@
     "ast_hash": "f20f832b1321224cb859e9dd71dd8318",
     "semantic_hash": ""
   },
-  "imgs/main2.png": {
-    "mtime": 1789849385.301164,
-    "seen": 1789849493.22793,
-    "ast_hash": "af33550fdb8b89875ed034fe1e2fb865",
-    "semantic_hash": ""
-  },
   "imgs/Couronne sur Implant.jpg": {
     "mtime": 1789853393.1568375,
     "seen": 1789853407.723728,
@@ -135,12 +87,6 @@
     "mtime": 1789854794.2584622,
     "seen": 1789854826.3230958,
     "ast_hash": "a2b94a918b2f2a1f2a82dc8ac3674afb",
-    "semantic_hash": ""
-  },
-  "imgs/main2.jpg": {
-    "mtime": 1789853394.8202033,
-    "seen": 1789853407.7237463,
-    "ast_hash": "a9e591621041e9445bb9da14b29f1244",
     "semantic_hash": ""
   },
   "README.md": {

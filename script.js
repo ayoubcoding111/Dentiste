@@ -57,119 +57,116 @@
   });
 })();
 
-// Task 4.1: arrows + infinite scroll — wrap-aware so last→first never sticks
-(function () {
-  var scroll = document.getElementById("treatScroll");
-  var prev = document.getElementById("treatPrev");
-  var next = document.getElementById("treatNext");
+// Infinite one-by-one carousel (treatments + before/after).
+// 3 copies of the cards; the middle copy is the live zone.
+// - Arrows: invisible instant pre-jump when near an edge, then ONE smooth step.
+// - Swipe: after the scroll settles, invisible rebase back to the middle copy.
+// - Snap is OFF only during the instant jumps, so no glitch and no full rewind.
+function makeInfiniteCarousel(scroll, prev, next, itemSelector, markClones) {
   if (!scroll) return;
-  // Triple the cards so scrolling wraps seamlessly in both directions
   var originals = Array.prototype.slice.call(scroll.children);
   [0, 1].forEach(function () {
     originals.forEach(function (c) {
       var cl = c.cloneNode(true);
-      cl.setAttribute("aria-hidden", "true");
-      cl.querySelectorAll("a").forEach(function (a) { a.tabIndex = -1; });
+      if (markClones) markClones(cl);
       scroll.appendChild(cl);
     });
   });
   var third = function () { return scroll.scrollWidth / 3; };
   var step = function () {
-    var card = scroll.querySelector(".treat-card");
+    var card = scroll.querySelector(itemSelector);
     if (!card) return 300;
-    var gap = parseFloat(
-      (window.getComputedStyle(scroll).columnGap ||
-        window.getComputedStyle(scroll).gap ||
-        "0").replace("px", "")
-    ) || 0;
+    var cs = window.getComputedStyle(scroll);
+    var gap = parseFloat(((cs.columnGap || cs.gap || "0") + "").replace("px", "")) || 0;
     return card.offsetWidth + gap;
   };
-  // Start on the middle copy
-  scroll.scrollLeft = third();
-  var suppress = false;
-  scroll.addEventListener("scroll", function () {
-    if (suppress) { suppress = false; return; }
+  var EPS = 8;
+  var snapOff = function () { scroll.style.scrollSnapType = "none"; };
+  var snapOn = function () { scroll.style.removeProperty("scroll-snap-type"); };
+  // Invisible instant rebase that keeps the same visual card on screen.
+  var rebase = function () {
     var w = third();
-    if (scroll.scrollLeft >= w * 2) {
-      suppress = true;
+    if (scroll.scrollLeft >= w * 2 - EPS) {
+      snapOff();
       scroll.scrollLeft -= w;
-    } else if (scroll.scrollLeft <= 0) {
-      suppress = true;
+      void scroll.offsetWidth;
+      snapOn();
+    } else if (scroll.scrollLeft <= EPS) {
+      snapOff();
       scroll.scrollLeft += w;
+      void scroll.offsetWidth;
+      snapOn();
     }
-  }, { passive: true });
+  };
+  // Start in the middle copy (after layout so widths are final).
+  var placeMiddle = function () {
+    snapOff();
+    scroll.scrollLeft = third();
+    void scroll.offsetWidth;
+    snapOn();
+  };
+  requestAnimationFrame(placeMiddle);
+  window.addEventListener("load", placeMiddle);
+  var rT = null;
+  window.addEventListener("resize", function () {
+    if (rT) clearTimeout(rT);
+    rT = setTimeout(placeMiddle, 150);
+  });
+  // Swipe: rebase only AFTER scrolling settles — never mid-gesture.
+  var settleT = null;
+  var queueRebase = function () {
+    if (settleT) clearTimeout(settleT);
+    settleT = setTimeout(rebase, 120);
+  };
+  scroll.addEventListener("scroll", queueRebase, { passive: true });
+  if ("onscrollend" in scroll) scroll.addEventListener("scrollend", rebase);
+  var busy = false;
   var go = function (dir) {
+    if (busy) return;
+    busy = true;
     var s = step();
     var w = third();
-    // Pre-jump to the middle copy so the smooth animation never crosses the wrap boundary
-    if (dir > 0 && scroll.scrollLeft + s >= w * 2) {
-      suppress = true;
+    var target = scroll.scrollLeft + dir * s;
+    // Pre-jump invisibly when the single step would cross the edge.
+    if (dir > 0 && target >= w * 2 - EPS) {
+      snapOff();
       scroll.scrollLeft -= w;
-    } else if (dir < 0 && scroll.scrollLeft - s <= 0) {
-      suppress = true;
+      void scroll.offsetWidth;
+      snapOn();
+    } else if (dir < 0 && target <= EPS) {
+      snapOff();
       scroll.scrollLeft += w;
+      void scroll.offsetWidth;
+      snapOn();
     }
     scroll.scrollBy({ left: dir * s, behavior: "smooth" });
+    setTimeout(function () { busy = false; rebase(); }, 500);
   };
   if (prev) prev.addEventListener("click", function () { go(-1); });
   if (next) next.addEventListener("click", function () { go(1); });
-})();
+}
 
-// Task 4.2: BA arrows + infinite scroll — same wrap-aware mechanics
+// Task 4.1: treatments carousel
+makeInfiniteCarousel(
+  document.getElementById("treatScroll"),
+  document.getElementById("treatPrev"),
+  document.getElementById("treatNext"),
+  ".treat-card",
+  function (cl) {
+    cl.setAttribute("aria-hidden", "true");
+    cl.querySelectorAll("a").forEach(function (a) { a.tabIndex = -1; });
+  }
+);
+
+// Task 4.2: BA carousel — same engine.
 // Must run BEFORE the [data-ba] init below so clones get compare handlers.
-(function () {
-  var scroll = document.getElementById("baScroll");
-  var prev = document.getElementById("baPrev");
-  var next = document.getElementById("baNext");
-  if (!scroll) return;
-  // Triple the sliders so scrolling wraps seamlessly in both directions.
-  var originals = Array.prototype.slice.call(scroll.children);
-  [0, 1].forEach(function () {
-    originals.forEach(function (c) {
-      var cl = c.cloneNode(true);
-      scroll.appendChild(cl);
-    });
-  });
-  var third = function () { return scroll.scrollWidth / 3; };
-  var step = function () {
-    var card = scroll.querySelector(".ba-slider");
-    if (!card) return 300;
-    var gap = parseFloat(
-      (window.getComputedStyle(scroll).columnGap ||
-        window.getComputedStyle(scroll).gap ||
-        "0").replace("px", "")
-    ) || 0;
-    return card.offsetWidth + gap;
-  };
-  // Start on the middle copy
-  scroll.scrollLeft = third();
-  var suppress = false;
-  scroll.addEventListener("scroll", function () {
-    if (suppress) { suppress = false; return; }
-    var w = third();
-    if (scroll.scrollLeft >= w * 2) {
-      suppress = true;
-      scroll.scrollLeft -= w;
-    } else if (scroll.scrollLeft <= 0) {
-      suppress = true;
-      scroll.scrollLeft += w;
-    }
-  }, { passive: true });
-  var go = function (dir) {
-    var s = step();
-    var w = third();
-    if (dir > 0 && scroll.scrollLeft + s >= w * 2) {
-      suppress = true;
-      scroll.scrollLeft -= w;
-    } else if (dir < 0 && scroll.scrollLeft - s <= 0) {
-      suppress = true;
-      scroll.scrollLeft += w;
-    }
-    scroll.scrollBy({ left: dir * s, behavior: "smooth" });
-  };
-  if (prev) prev.addEventListener("click", function () { go(-1); });
-  if (next) next.addEventListener("click", function () { go(1); });
-})();
+makeInfiniteCarousel(
+  document.getElementById("baScroll"),
+  document.getElementById("baPrev"),
+  document.getElementById("baNext"),
+  ".ba-slider",
+  null
+);
 
 // Task 4.2: Before / After sliders
 (function () {

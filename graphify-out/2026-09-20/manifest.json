@@ -1,0 +1,194 @@
+{
+  "PRD.md": {
+    "mtime": 1789845058.5154803,
+    "seen": 1789845276.7298007,
+    "ast_hash": "7db33100b757dd7894ff0763da245a73",
+    "semantic_hash": ""
+  },
+  "TASKS.md": {
+    "mtime": 1789852478.3940306,
+    "seen": 1789852481.2343078,
+    "ast_hash": "7ff99a4318cdbd008b9f7c7612622519",
+    "semantic_hash": ""
+  },
+  "TRD.md": {
+    "mtime": 1789834881.6786494,
+    "seen": 1789845276.7298112,
+    "ast_hash": "99a3143750953bc724849523fa2222f8",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1789918156.3635907,
+    "seen": 1789918159.2400873,
+    "ast_hash": "19b6951be2143ac2e69126c3bb42a469",
+    "semantic_hash": ""
+  },
+  "imgs/Couronne sur Implant.png": {
+    "mtime": 1789840042.3080885,
+    "seen": 1789845276.7298148,
+    "ast_hash": "19e59da3eda850b847ce0e6145ad3048",
+    "semantic_hash": ""
+  },
+  "imgs/Firefly (3).png": {
+    "mtime": 1789839692.541148,
+    "seen": 1789845276.7298164,
+    "ast_hash": "afb19e7cf242993f16feb944220a8639",
+    "semantic_hash": ""
+  },
+  "imgs/Invisalign.png": {
+    "mtime": 1789840082.6242042,
+    "seen": 1789845276.7298193,
+    "ast_hash": "e833a6d1e7182829e3bfe500ad6949dd",
+    "semantic_hash": ""
+  },
+  "imgs/L'Implantation Dentaire.png": {
+    "mtime": 1789839632.4103808,
+    "seen": 1789845276.7298207,
+    "ast_hash": "37fbe4ac8cef17f8a535f8a0ff9fee50",
+    "semantic_hash": ""
+  },
+  "imgs/facettes.png": {
+    "mtime": 1789839844.9403944,
+    "seen": 1789845276.7298222,
+    "ast_hash": "dff926ec21070689d6756984d45176f5",
+    "semantic_hash": ""
+  },
+  "imgs/pexels-karola-g-6627599-removebg-preview.png": {
+    "mtime": 1789839852.8588722,
+    "seen": 1789845276.7298255,
+    "ast_hash": "d685eadd5f4f6724a361ba48b4e3b77b",
+    "semantic_hash": ""
+  },
+  "imgs/transparent.png": {
+    "mtime": 1789840124.8988307,
+    "seen": 1789845276.729827,
+    "ast_hash": "674712d4e2477d6815445fb12865ac02",
+    "semantic_hash": ""
+  },
+  "script.js": {
+    "mtime": 1789912571.8489244,
+    "seen": 1789912574.7916539,
+    "ast_hash": "136f25eca3b767dfc567905fc219ff2f",
+    "semantic_hash": ""
+  },
+  "imgs clinique/{CA812A7E-CEB3-4510-A912-B9FE47440C36}.png": {
+    "mtime": 1789845698.5395465,
+    "seen": 1789845739.9139385,
+    "ast_hash": "6b373e507943da7123ea2c0f6453e86d",
+    "semantic_hash": ""
+  },
+  "imgs clinique/{45D72C74-0B48-48F0-B2A2-9CBEFDD9FAF6}.png": {
+    "mtime": 1789845774.6787076,
+    "seen": 1789845818.4772236,
+    "ast_hash": "08274c13d6b5f39dd240f1fb73b8bee6",
+    "semantic_hash": ""
+  },
+  "imgs clinique/{696A136D-D1EC-4E5A-8376-C378B6F7B03D}.png": {
+    "mtime": 1789845755.1947467,
+    "seen": 1789845818.4772277,
+    "ast_hash": "7a0d92860c39bb2afb606dbacc5eb7d5",
+    "semantic_hash": ""
+  },
+  "imgs clinique/{D4026D17-A5E6-4282-BD3C-0A5B9D0FF636}.png": {
+    "mtime": 1789845788.2713084,
+    "seen": 1789845818.4772348,
+    "ast_hash": "c718b207b4c28a246052fc1b4dc7df80",
+    "semantic_hash": ""
+  },
+  "imgs clinique/{E2B95145-7EB6-46FE-BF14-0619F8FF0E79}.png": {
+    "mtime": 1789845738.47875,
+    "seen": 1789845818.4772377,
+    "ast_hash": "2870fdc53a0c1a9e25fde9cd72719b92",
+    "semantic_hash": ""
+  },
+  "imgs/logo.png": {
+    "mtime": 1789846273.868362,
+    "seen": 1789846321.3486478,
+    "ast_hash": "f20f832b1321224cb859e9dd71dd8318",
+    "semantic_hash": ""
+  },
+  "imgs/main2.png": {
+    "mtime": 1789849385.301164,
+    "seen": 1789849493.22793,
+    "ast_hash": "af33550fdb8b89875ed034fe1e2fb865",
+    "semantic_hash": ""
+  },
+  "imgs/Couronne sur Implant.jpg": {
+    "mtime": 1789853393.1568375,
+    "seen": 1789853407.723728,
+    "ast_hash": "c1def102cc461dfc44d0f8e1eaa69239",
+    "semantic_hash": ""
+  },
+  "imgs/Invisalign.jpg": {
+    "mtime": 1789853392.457505,
+    "seen": 1789853407.7237334,
+    "ast_hash": "2d5ab88258e9233de25529146f3a63bf",
+    "semantic_hash": ""
+  },
+  "imgs/L'Implantation Dentaire.jpg": {
+    "mtime": 1789853393.7852077,
+    "seen": 1789853407.7237372,
+    "ast_hash": "ebf60aff89de09de50b201dfa3122a50",
+    "semantic_hash": ""
+  },
+  "imgs/facettes.jpg": {
+    "mtime": 1789854794.2584622,
+    "seen": 1789854826.3230958,
+    "ast_hash": "a2b94a918b2f2a1f2a82dc8ac3674afb",
+    "semantic_hash": ""
+  },
+  "imgs/main2.jpg": {
+    "mtime": 1789853394.8202033,
+    "seen": 1789853407.7237463,
+    "ast_hash": "a9e591621041e9445bb9da14b29f1244",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1789853913.1334457,
+    "seen": 1789854111.2649229,
+    "ast_hash": "abb53f9bef79e45fe32a7594a49a3162",
+    "semantic_hash": ""
+  },
+  "imgs/main.png": {
+    "mtime": 1789906776.847713,
+    "seen": 1789906985.2806597,
+    "ast_hash": "138dd7f06c5c8af834a3316961b34503",
+    "semantic_hash": ""
+  },
+  "before after/first1.jpg": {
+    "mtime": 1789908740.420051,
+    "seen": 1789909069.606847,
+    "ast_hash": "e736a02ebf82cc5649c2235664d18978",
+    "semantic_hash": ""
+  },
+  "before after/first2.jpg": {
+    "mtime": 1789908327.409678,
+    "seen": 1789909069.6068492,
+    "ast_hash": "56065ae5a1d8d17a914071305621b752",
+    "semantic_hash": ""
+  },
+  "before after/second1.jpg": {
+    "mtime": 1789908574.8651736,
+    "seen": 1789908981.0030184,
+    "ast_hash": "6ec70df0a46350630b59d31ab7c05301",
+    "semantic_hash": ""
+  },
+  "before after/second2.jpg": {
+    "mtime": 1789908592.2798507,
+    "seen": 1789908981.0030198,
+    "ast_hash": "6d008653ea2db84bfe5c57bc76d9dd0a",
+    "semantic_hash": ""
+  },
+  "before after/third1.jpg": {
+    "mtime": 1789908583.6398907,
+    "seen": 1789908981.0030212,
+    "ast_hash": "480e12ce464b9f1a7fe307910fe8b281",
+    "semantic_hash": ""
+  },
+  "before after/third2.jpg": {
+    "mtime": 1789908600.1094663,
+    "seen": 1789908981.003023,
+    "ast_hash": "bac8bc37e36f95f1477319da2fa4c76a",
+    "semantic_hash": ""
+  }
+}
